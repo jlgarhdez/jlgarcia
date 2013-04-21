@@ -19,12 +19,12 @@ context:
                 css_class: home
                 type: page
                 url: index.html
-            -
-                name: About
-                description: About
-                css_class: about
-                type: page
-                url: about.html
+            #-
+                #name: About
+                #description: About
+                #css_class: about
+                #type: page
+                #url: about.html
             -
                 name: Feed
                 description: Feed

@@ -1,0 +1,73 @@
+---
+title: Volviendo a Vim. No soy el primero que dice esto...
+created: !!timestamp '2013-02-01 10:00:00'
+---
+
+<p>En este post quiero hablaros de Vim, de por qué dejé de usarlo y de por qué
+vuelvo ahora a él. Bueno, antes de nada os dejo el enlace a mi <a href="https://github.com/jlgarhdez/vim">carpeta de configuración
+de Vim</a>.</p>
+
+<h2>Por qué lo dejé</h2>
+
+<p>Pues ahora mismo no recuerdo bien. Creo que lo dejé porque descubrí 
+<a href="http://www.jetbrains.com/phpstorm/">Phpstorm</a>. Bueno, yo desarrollo en PHP, y 
+editores buenos para php hay pocos. Es un IDE bastante potente hecho por los amigos 
+de Jetbrains. Probablemente conozcáis IntelliJ IDEA, para Java. Lo de los IDE´s al 
+principio me flipó bastante -Los descubrí, yo creo con Eclipse para Java-. Luego,
+cuando empiezan a comer memoria como Zombies hambrientos, ya harta más. Por ésto 
+me pasé a PhpStorm, es potente, rápido -comparado con Eclipse- , el autocompletado
+no está mal...</p>
+
+<p>Tiene muchas cosas buenas PhpStorm... Pero también muchas malas. Es pesado, lento
+-- contra Vim/ Sublime/ Textmate...--, de pago, y sobre todo, poco configurable.</p>
+
+<p>Después de PhpStorm estuve un tiempo con Sublime Text 2. Aparte de los cursores
+múltiples que, aceptémoslo, es una killer feature, no tiene nada para mí. Cosa[s]
+buena[s] de Sublime Text para mí, los cursores múltiples. Lo "malo" es que es 
+suficientemente buena como para cambiarse. Agiliza muchísimo el tratamiento de 
+textos grandes. Pero para programar en sí, no aporta nada.</p>
+
+<p>Cosas malas que veo de Sublime: para ser un editor "ligero" es <strong>pesado</strong>. En una
+ocasión se me ocurrió abrir un backup de 100M para hacer unas modificaciones y 
+me tocó tirar de <em>forceclose</em>. Y, sobre todo, no es software libre.</p>
+
+<h2>Por qué vuelvo</h2>
+
+<p>Vuelvo a Vim por muchas razones, pero en el top están:</p>
+
+<ol>
+<li><strong>El poder mantener mi configuración entre máquinas.</strong>
+Bueno, ésto no es un problema para un editor no configurable, pero para otro que
+sí lo sea, lo es.</li>
+</ol>
+
+<p>Como toda la configuración va sobre archivos de texto, es totalmente versionable.
+Yo tengo mi carpeta de configuración en Github. Por lo que si quiero tener mi Vim
+en cualquier otra máquina, sólamente necesito tres comandos:</p>
+
+<pre><code>cd ~/
+git clone https://github.com/jlgarhdez/vim.git .vim
+ln -s .vim/vimrc .vimrc
+</code></pre>
+
+<ol>
+<li><p><strong>Se puede customizar hasta la médula.</strong>
+Todo lo que se te ocurra existe en vim. De hecho, todo lo que existe en Unix, existe
+en Vim.</p></li>
+<li><p><strong>Te vuelve RÁPIDO.</strong>
+Todos los gurús de Vim dicen lo mismo para cuando empiezas. Que desmapees las
+flechas del teclado y uses hjkl para moverte.</p>
+<p>Al principio cuando usaba Vim usaba las teclas de dirección para moverme pero, 
+aunque parezca que no, ralentizan. Una vez sabes cómo, eres más rápido con las 
+teclas especiales de Vim que con las teclas de dirección.</p>
+</li>
+<li><strong>Integración total con UNIX.</strong>
+Cualquier herramienta de CLI que tengas instalada en el equipo es acesible desde
+Vim con :!nombreDelBinario.</li>
+</ol>
+
+<h2>Conclusión</h2>
+
+<p>Os aconsejaría a todos a probar Vim, aunque sea sólo como editor "ligero", ese que
+usamos para editar los TXT o el /etc/hosts.</p>
+

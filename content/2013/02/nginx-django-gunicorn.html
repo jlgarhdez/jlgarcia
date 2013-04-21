@@ -1,0 +1,77 @@
+---
+title: Nginx, Django y Green Unicorn, magia negra
+created: !!timestamp '2013-02-10 10:00:00'
+---
+
+<p>Para estrenar el blog, vamos con un buen ladrillo. Vamos a hablar sobre cómo 
+está montada ésta web.</p>
+
+<h2>Intro</h2>
+
+<p>Ésta web la he creado principalmente, para aprender. En ella uso Django, Ngnix,
+	Gunicorn... Os lo muestro con una imagen para que quede más claro. </p>
+<p><img src="https://lh5.googleusercontent.com/-0UP-0ib7FOs/UK1IVdhOd_I/AAAAAAAAASk/F9Xt-OPjznE/s512/jlgarcia.me.jpg"></p>
+
+<h2>Nginx</h2>
+
+<p>En este caso, Nginx lo estoy usando como proxy sólamente. Uso Nginx en vez de 
+Apache, Lighttp o FastCGI porque... bueno... es lo más jodido trendy, todo el 
+mundo quiere a Nginx. No, ahora en serio, lo uso porque Apache lo he usado en 
+ocasiones anteriores, y lo que necesito es un proxy que redirija el tráfico que 
+vaya hacia <a href="jlgarcia.me/blog">jlgarcia.me/blog</a>  a un puerto en el que 
+corre Green Unicorn.</p>
+
+<p>
+La configuración que uso en Nginx es la siguiente:
+<pre>server {
+     server_name jlgarcia.me;
+     access_log /var/log/nginx/nginx_access.log;
+     location / {
+          alias /var/www/;
+     }
+     location /blog {
+          proxy_pass    http://127.0.0.1:1337/blog;
+     }
+     location /static {
+          alias /var/www/static/;
+     }
+}
+</pre>
+</p><p>
+Lo que hacemos en esta configuración es:
+<ul>
+     <li>Servir el dominio jlgarcia.me</li>
+     <li>Enviar las peticiones a <a href="http://jlgarcia.me">jlgarcia.me</a> a 
+	 la carpeta raíz de mi servidor</li>
+     <li>Pasar las peticiones al <a href="http://jlgarcia.me/blog">jlgarcia.me/blog</a> 
+	 al servidor que está corriendo en el puerto 1337 en nuestra máquina mediante 
+	 Green Unicorn</li>
+     <li>Servir el contenido estático (CSS, Javascript, imágenes...) de nuestra 
+	 carpeta Static</li>
+</ul>
+</p>
+<h2>Sobre Green Unicorn</h2> 
+<p>
+ Con Gunicorn, lo que hacemos es servir en sí el contenido de Django. Es bastante 
+ fácil de usar y configuración requiere cero. Lo que he hecesitado para que 
+ funcione es instalarlo:
+ <pre>sudo pip install gunicorn</pre>
+ Después añadirlo a las installed apps de Django en la configuración y, por 
+ último, parra arrancar el servidor uso la siguiente instrucción:
+ <pre>./manage.py run_gunicorn -b 127.0.0.1:1337 --daemon</pre>
+ Ésto lo que hace es correr el servidor en modo "daemon" en el puerto 1337. Rly Ez!
+
+</p>
+
+<h2>Bootstrap</h2>
+
+<p>
+Aceptémoslo, el frontend para un retrasado visual —como yo— es bastante jodido. 
+Lo que quería para ésta web era un diseño que no necesitara imágenes principalmente 
+—de hecho no tengo ninguna hecha por mí en todo el diseño— Además tenemos el que 
+es completamente responsive, que es un estándar y que es bastante bonito. 
+</p>
+
+<p>
+Espero haber dado suficiente coñazo... Nos vemos!
+</p>

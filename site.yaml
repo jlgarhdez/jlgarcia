@@ -25,6 +25,12 @@ context:
                 css_class: about
                 type: page
                 url: about.html
+            -
+                name: Feed
+                description: Feed
+                css_class: feed
+                type: page
+                url: atom.xml
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00

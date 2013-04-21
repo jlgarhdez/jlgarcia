@@ -1,0 +1,176 @@
+<!doctype html>
+<!-- https://github.com/paulirish/html5-boilerplate/blob/master/index.html -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="">
+
+  <!-- encoding must be specified within the first 512 bytes
+        www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset -->
+
+  <!-- meta element for compatibility mode needs to be before
+        all elements except title & meta
+        msdn.microsoft.com/en-us/library/cc288325(VS.85).aspx -->
+  <!-- Chrome Frame is only invoked if meta element for
+        compatibility mode is within the first 1K bytes
+        code.google.com/p/chromium/issues/detail?id=23003 -->
+
+  <title>Volviendo a Vim. No soy el primero que dice esto...</title>
+  <meta name="description" content="">
+  <meta name="author" content="José Luis García">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="">
+
+    <!-- Place favicon.ico & apple-touch-icon.png
+        in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="">
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/media/css/site.css">
+  <link rel="stylesheet" href="/media/css/syntax.css">
+  <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/media/css/bootstrap-responsive.min.css">
+  
+    <!-- All JavaScript at the bottom, except for Modernizr which
+        enables HTML5 elements & feature detects -->
+    <script src="/media/js/libs/modernizr-1.7.min.js"></script>
+    </head>
+<body id="volviendo-a-vim">
+    <div id="container">
+            <div id="main" role="main">
+          <header class="banner clearfix">
+          
+		  <h1 class="logo">jlgarcia</h1>
+
+                              <nav class=main_nav>
+    <ul>
+                <li>
+            <a title="Home Page"
+                class="button white home"
+                href="/index.html">
+                Home
+            </a>
+        </li>        <li>
+            <a title="About"
+                class="button white about"
+                href="/about.html">
+                About
+            </a>
+        </li>        <li>
+            <a title="Feed"
+                class="button white feed"
+                href="/atom.xml">
+                Feed
+            </a>
+        </li>    </ul>
+</nav>
+                    </header>
+          <section class="content">
+          <article class="post">
+<h2 class="title">
+    <a href="/2013/02/volviendo-a-vim.html">
+        Volviendo a Vim. No soy el primero que dice esto...
+    </a>
+</h2>
+<time datetime="2013-02-01">
+    Posted: Fri, 01 Feb 2013
+</time>
+
+<p>En este post quiero hablaros de Vim, de por qué dejé de usarlo y de por qué
+vuelvo ahora a él. Bueno, antes de nada os dejo el enlace a mi <a href="https://github.com/jlgarhdez/vim">carpeta de configuración
+de Vim</a>.</p>
+
+<h3>Por qué lo&nbsp;dejé</h3>
+
+<p>Pues ahora mismo no recuerdo bien. Creo que lo dejé porque descubrí 
+<a href="http://www.jetbrains.com/phpstorm/">Phpstorm</a>. Bueno, yo desarrollo en <span class="caps">PHP</span>, y 
+editores buenos para php hay pocos. Es un <span class="caps">IDE</span> bastante potente hecho por los amigos 
+de Jetbrains. Probablemente conozcáis IntelliJ <span class="caps">IDEA</span>, para Java. Lo de los <span class="caps">IDE</span>´s al 
+principio me flipó bastante -Los descubrí, yo creo con Eclipse para Java-. Luego,
+cuando empiezan a comer memoria como Zombies hambrientos, ya harta más. Por ésto 
+me pasé a PhpStorm, es potente, rápido -comparado con Eclipse- , el autocompletado
+no está&nbsp;mal&#8230;</p>
+
+<p>Tiene muchas cosas buenas PhpStorm&#8230; Pero también muchas malas. Es pesado, lento
+&#8212; contra Vim/ Sublime/ Textmate&#8230;&#8212;, de pago, y sobre todo, poco&nbsp;configurable.</p>
+
+<p>Después de PhpStorm estuve un tiempo con Sublime Text 2. Aparte de los cursores
+múltiples que, aceptémoslo, es una killer feature, no tiene nada para mí. Cosa[s]
+buena[s] de Sublime Text para mí, los cursores múltiples. Lo &#8220;malo&#8221; es que es 
+suficientemente buena como para cambiarse. Agiliza muchísimo el tratamiento de 
+textos grandes. Pero para programar en sí, no aporta&nbsp;nada.</p>
+
+<p>Cosas malas que veo de Sublime: para ser un editor &#8220;ligero&#8221; es <strong>pesado</strong>. En una
+ocasión se me ocurrió abrir un backup de 100M para hacer unas modificaciones y 
+me tocó tirar de <em>forceclose</em>. Y, sobre todo, no es software&nbsp;libre.</p>
+
+<h3>Por qué&nbsp;vuelvo</h3>
+
+<p>Vuelvo a Vim por muchas razones, pero en el top&nbsp;están:</p>
+
+<ol>
+<li><strong>El poder mantener mi configuración entre máquinas.</strong>
+Bueno, ésto no es un problema para un editor no configurable, pero para otro que
+sí lo sea, lo&nbsp;es.</li>
+</ol>
+
+<p>Como toda la configuración va sobre archivos de texto, es totalmente versionable.
+Yo tengo mi carpeta de configuración en Github. Por lo que si quiero tener mi Vim
+en cualquier otra máquina, sólamente necesito tres&nbsp;comandos:</p>
+
+<pre><code>cd ~/
+git clone https://github.com/jlgarhdez/vim.git .vim
+ln -s .vim/vimrc .vimrc
+</code></pre>
+
+<ol>
+<li><p><strong>Se puede customizar hasta la médula.</strong>
+Todo lo que se te ocurra existe en vim. De hecho, todo lo que existe en Unix, existe
+en&nbsp;Vim.</p></li>
+<li><p><strong>Te vuelve RÁ<span class="caps">PIDO</span>.</strong>
+Todos los gurús de Vim dicen lo mismo para cuando empiezas. Que desmapees las
+flechas del teclado y uses hjkl para&nbsp;moverte.</p>
+<p>Al principio cuando usaba Vim usaba las teclas de dirección para moverme pero, 
+aunque parezca que no, ralentizan. Una vez sabes cómo, eres más rápido con las 
+teclas especiales de Vim que con las teclas de&nbsp;dirección.</p>
+</li>
+<li><strong>Integración total con <span class="caps">UNIX</span>.</strong>
+Cualquier herramienta de <span class="caps">CLI</span> que tengas instalada en el equipo es acesible desde
+Vim con&nbsp;:!nombreDelBinario.</li>
+</ol>
+
+<h3>Conclusión</h3>
+
+<p>Os aconsejaría a todos a probar Vim, aunque sea sólo como editor &#8220;ligero&#8221;, ese que
+usamos para editar los <span class="caps">TXT</span> o el&nbsp;/etc/hosts.</p></article>          </section>
+      </div>
+      </div> <!--! end of #container -->
+  <footer>
+      Powered by <a href="http://ringce.com/hyde">hyde</a>.
+  </footer>
+      <script src="/media/js/bootstrap.min.js"></script>
+  <!-- Javascript at the bottom for fast page loading -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
+  
+    
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+      
+  </body>
+</html>

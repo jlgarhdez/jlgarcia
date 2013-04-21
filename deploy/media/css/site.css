@@ -1,0 +1,116 @@
+* {
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    text-decoration:inherit;
+    font-size: 100%;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+:focus {
+    outline: 0;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
+
+/* clearfix */
+.clear:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    display: block;
+}
+
+
+* html .clear {
+    height: 1%;
+}
+
+#container {
+	margin: auto;
+	width: 600px;
+}
+
+footer {
+	margin: auto;
+	width: 600px;
+}
+
+header {
+	height: 70px;
+}
+
+h1.logo {
+    font-family: 'Playfair Display', serif;
+	font-size: 30px;
+	width: 150px;
+	margin: 0px;
+	float: left;
+}
+
+nav.main_nav {
+	width: 400px;
+	float: right;
+	margin-top: 15px;
+}
+
+nav.main_nav ul li{
+	float: right;
+	list-style: none;
+	width: 100px;
+}
+
+h2.title {
+    font-family: 'Playfair Display', serif;
+	font-style: italic;
+	font-size: 40px;
+}
+
+h2.title a {
+	color: #333;
+}
+
+article {
+    font-family: Georgia;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+article p{
+    margin-bottom: 16px;
+}
+
+article time{
+	color: #666;
+	font-size: 15px;
+	font-style: italic;
+}
+
+article h3 {
+    font-family: 'Playfair Display', serif;
+	font-size: 35px;
+}
+
+article h3 a {
+	color: #333;
+}

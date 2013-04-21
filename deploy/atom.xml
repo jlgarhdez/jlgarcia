@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        BASIC blog full text feed    </title>
+        <link href="/atom.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2013-04-21T23:55:05Z</updated>
+
+    <id>/atom.xml/</id>
+
+            <entry>
+            <title type="html">Hola Hyde!</title>
+            <author><name>José Luis García</name></author>
+            <link href="/2013/04/hola-hyde.html"/>
+            <updated>2013-04-20T10:00:00Z</updated>
+            <published>2013-04-20T10:00:00Z</published>
+            <id>/2013/04/hola-hyde.html</id>
+            
+            <content type="html">
+                                &lt;p&gt;Bueno, pues me cambio a &lt;a href=&#34;http://ringce.com/hyde&#34;&gt;Hyde&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;No es por nada, sólamente que aún no piloto Python lo suficiente para hacer lo
+que me gustaría con &lt;a href=&#34;http://djangoproject.org&#34;&gt;Django&lt;/a&gt;, y con Hyde puedo&amp;nbsp;hacerlo.&lt;/p&gt;
+&lt;p&gt;Hyde es lo que llaman un &lt;em&gt;static site generator&lt;/em&gt;, esto es un software que se
+encarga de generar archivos &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; a partir de archivos
+&lt;a href=&#34;http://daringfireball.net/projects/markdown&#34;&gt;Markdown&lt;/a&gt;, Jinja2,&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;RST&lt;/span&gt;&amp;#8230;&lt;/p&gt;
+&lt;p&gt;Con ésto lo que consigo básicamente es poder gestionar toda la página desde Git,
+sin tener que preocuparme de bases de datos, backups etc. Tengo siempre mi
+backup en Github y me&amp;nbsp;olvido.&lt;/p&gt;
+&lt;p&gt;Esto de pasarse a sitios estáticos se puso de moda entre los blogueros más pro
+para poder soportar lo que denominan &lt;em&gt;efecto Reddit&lt;/em&gt;, es decir, que alguien
+ponga un enlace a un artículo de tu blog en una de estas plataformas y recibir
+tráfico masivo en cuestion de minutos. Imaginad lo que puede ser para un
+servidor chungo (Yo por ejemplo estoy pagando 15$ al mes por un &lt;span class=&#34;caps&#34;&gt;VPS&lt;/span&gt;.) que un
+artículo tuyo se haga portada en Hacker News o en Reddit&amp;#8230;&amp;nbsp;Locura.&lt;/p&gt;
+&lt;p&gt;Aparte, con el cambio de framework, viene tambien un rediseño. Bueno, un diseño,
+ya que en el anterior ni había parado a hacerlo, era un Bootstrap&amp;nbsp;básico.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Cómo no usar el ratón en todo un día de trabajo</title>
+            <author><name>José Luis García</name></author>
+            <link href="/2013/04/productividad-sin-raton.html"/>
+            <updated>2013-04-14T10:00:00Z</updated>
+            <published>2013-04-14T10:00:00Z</published>
+            <id>/2013/04/productividad-sin-raton.html</id>
+            
+            <content type="html">
+                                &lt;p&gt;Me he vuelto un poco talibán con el tema de la productividad y el no sacar 
+las manos del&amp;nbsp;teclado.&lt;/p&gt;
+
+&lt;h3&gt;Herramientas&lt;/h3&gt;
+
+&lt;p&gt;&lt;p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&#34;http://www.alfredapp.com&#34;&gt;Alfred&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;http://www.mozilla.org&#34;&gt;Firefox&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;http://5digits.org/pentadactyl/&#34;&gt;Pentadactyl&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/p&gt;&lt;/p&gt;
+&lt;h3&gt;¿Cómo?&lt;/h3&gt;
+
+&lt;p&gt;Bien, el tema es que si no tienes que mover las manos hasta el ratón a cada
+rato, se gana bastante tiempo. ¿Y qué más me da eso? Pues que así tienes más
+tiempo para procrastinar, 4chan se nutre de&amp;nbsp;nosotros&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;Básicamente mi workflow es: &lt;ul&gt;
+
+    &lt;li&gt;Todo el texto que tengo que escribir lo escribo en Vim. Incluso
+    responder emails, escribir éste post&amp;#8230; todo. Es más rápido escribirlo en
+    Vim, copiar y pegar que desaprender todos mis tricks para escribir como el
+    resto de los&amp;nbsp;mortales.&lt;/li&gt;
+
+    &lt;li&gt;Como navegador utilizo Firefox. No por el navegador en sí, de hecho me
+    parece que Chrome es mejor, pero Chrome no tiene Pentadactyl&amp;#8230; Tiene algo
+    parecido llamado Vimium, pero no es lo mismo ni de&amp;nbsp;cerca.&lt;/li&gt;
+
+    &lt;li&gt;Pentadactyl para manejar Firefox. ¿Cómo he podido vivir sin tí? es un 
+    addon para Firefox que permite manejar el navegador con controles parecidos 
+    a Vim. Aparte, tiene unos cuantos plugins interesantes como el de firebug, 
+    para manejar Firebug o el de jQuery, escrito por el mismo John Resig&amp;#8230; 
+    Además con Pentadactyl tiene opcion de editar cualquier textarea en el 
+    editor que elijas&amp;nbsp;(&lt;span class=&#34;caps&#34;&gt;VIM&lt;/span&gt;!)&lt;/li&gt;
+
+    &lt;li&gt;Para abrir aplicaciones nuevas y cambiar entre las que tengo abiertas,
+    uso Alfred. Es un lanzador de aplicaciones que se activa con un hotkey
+    y que, aparte de lanzar aplicaciones, también permite crearte tus propias 
+    busquedas. Yo tengo por ejemplo un atajo para buscar en la &lt;span class=&#34;caps&#34;&gt;API&lt;/span&gt; de&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;.&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h3&gt;¿Por qué&amp;nbsp;Alfred?&lt;/h3&gt;
+
+&lt;p&gt;Bueno, sé que hay otros lanzadores de aplicaciones en el mercado, por ejemplo
+Quicksilver. Si he de ser sincero, no lo he probado, me lo apunto ya que me lo
+preguntas&amp;#8230;&amp;nbsp;:)&lt;/p&gt;
+
+&lt;h3&gt;¿Por qué&amp;nbsp;Vim?&lt;/h3&gt;
+
+&lt;p&gt;Bitch,&amp;nbsp;please&amp;#8230;&lt;/p&gt;
+
+&lt;h3&gt;¿Por qué&amp;nbsp;Firefox?&lt;/h3&gt;
+
+&lt;p&gt;Por&amp;nbsp;Pentadactyl.&lt;/p&gt;
+
+&lt;h3&gt;¿Por qué&amp;nbsp;Pentadactyl?&lt;/h3&gt;
+
+&lt;p&gt;Bueno, se es más rápido. Únicamente tienes que mover tus manos entre las
+teclas, lo que ahorra mucho tiempo. Te puedes crear macros para hacer acciones&amp;nbsp;concretas.&lt;/p&gt;
+
+&lt;p&gt;De todos  modos tengo que decir que no todo el tiempo estoy solamente con el 
+teclado. Hay algunos momentos, cuando estoy leyendo un post largo por ejemplo, o
+estoy en alguna página que necesita de más interaccion que hacer click en
+enlaces, que uso el&amp;nbsp;ratón&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Nginx, Django y Green Unicorn, magia negra</title>
+            <author><name>José Luis García</name></author>
+            <link href="/2013/02/nginx-django-gunicorn.html"/>
+            <updated>2013-02-10T10:00:00Z</updated>
+            <published>2013-02-10T10:00:00Z</published>
+            <id>/2013/02/nginx-django-gunicorn.html</id>
+            
+            <content type="html">
+                                &lt;p&gt;Para estrenar el blog, vamos con un buen ladrillo. Vamos a hablar sobre cómo 
+está montada ésta&amp;nbsp;web.&lt;/p&gt;
+
+&lt;h3&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;Ésta web la he creado principalmente, para aprender. En ella uso Django, Ngnix,
+    Gunicorn&amp;#8230; Os lo muestro con una imagen para que quede más&amp;nbsp;claro. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/-0UP-0ib7FOs/UK1IVdhOd_I/AAAAAAAAASk/F9Xt-OPjznE/s512/jlgarcia.me.jpg&#34;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Nginx&lt;/h3&gt;
+
+&lt;p&gt;En este caso, Nginx lo estoy usando como proxy sólamente. Uso Nginx en vez de 
+Apache, Lighttp o FastCGI porque&amp;#8230; bueno&amp;#8230; es lo más jodido trendy, todo el 
+mundo quiere a Nginx. No, ahora en serio, lo uso porque Apache lo he usado en 
+ocasiones anteriores, y lo que necesito es un proxy que redirija el tráfico que 
+vaya hacia &lt;a href=&#34;jlgarcia.me/blog&#34;&gt;jlgarcia.me/blog&lt;/a&gt;  a un puerto en el que 
+corre Green&amp;nbsp;Unicorn.&lt;/p&gt;
+
+&lt;p&gt;
+La configuración que uso en Nginx es la siguiente:
+&lt;pre&gt;server {
+     server_name jlgarcia.me;
+     access_log /var/log/nginx/nginx_access.log;
+     location / {
+          alias /var/www/;
+     }
+     location /blog {
+          proxy_pass    http://127.0.0.1:1337/blog;
+     }
+     location /static {
+          alias /var/www/static/;
+     }
+}
+&lt;/pre&gt;
+&lt;/p&gt;&lt;p&gt;
+Lo que hacemos en esta configuración es:
+&lt;ul&gt;
+     &lt;li&gt;Servir el dominio&amp;nbsp;jlgarcia.me&lt;/li&gt;
+     &lt;li&gt;Enviar las peticiones a &lt;a href=&#34;http://jlgarcia.me&#34;&gt;jlgarcia.me&lt;/a&gt; a 
+     la carpeta raíz de mi&amp;nbsp;servidor&lt;/li&gt;
+     &lt;li&gt;Pasar las peticiones al &lt;a href=&#34;http://jlgarcia.me/blog&#34;&gt;jlgarcia.me/blog&lt;/a&gt; 
+     al servidor que está corriendo en el puerto 1337 en nuestra máquina mediante 
+     Green&amp;nbsp;Unicorn&lt;/li&gt;
+     &lt;li&gt;Servir el contenido estático (&lt;span class=&#34;caps&#34;&gt;CSS&lt;/span&gt;, Javascript, imágenes&amp;#8230;) de nuestra 
+     carpeta&amp;nbsp;Static&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;h3&gt;Sobre Green&amp;nbsp;Unicorn&lt;/h3&gt; 
+&lt;p&gt;
+ Con Gunicorn, lo que hacemos es servir en sí el contenido de Django. Es bastante 
+ fácil de usar y configuración requiere cero. Lo que he hecesitado para que 
+ funcione es instalarlo:
+ &lt;pre&gt;sudo pip install gunicorn&lt;/pre&gt;
+ Después añadirlo a las installed apps de Django en la configuración y, por 
+ último, parra arrancar el servidor uso la siguiente instrucción:
+ &lt;pre&gt;./manage.py run_gunicorn -b 127.0.0.1:1337 --daemon&lt;/pre&gt;
+ Ésto lo que hace es correr el servidor en modo &amp;#8220;daemon&amp;#8221; en el puerto 1337. Rly&amp;nbsp;Ez!
+
+&lt;/p&gt;
+
+&lt;h3&gt;Bootstrap&lt;/h3&gt;
+
+&lt;p&gt;
+Aceptémoslo, el frontend para un retrasado visual —como yo— es bastante jodido. 
+Lo que quería para ésta web era un diseño que no necesitara imágenes principalmente 
+—de hecho no tengo ninguna hecha por mí en todo el diseño— Además tenemos el que 
+es completamente responsive, que es un estándar y que es bastante&amp;nbsp;bonito. 
+&lt;/p&gt;
+
+&lt;p&gt;
+Espero haber dado suficiente coñazo&amp;#8230; Nos&amp;nbsp;vemos!
+&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Volviendo a Vim. No soy el primero que dice esto...</title>
+            <author><name>José Luis García</name></author>
+            <link href="/2013/02/volviendo-a-vim.html"/>
+            <updated>2013-02-01T10:00:00Z</updated>
+            <published>2013-02-01T10:00:00Z</published>
+            <id>/2013/02/volviendo-a-vim.html</id>
+            
+            <content type="html">
+                                &lt;p&gt;En este post quiero hablaros de Vim, de por qué dejé de usarlo y de por qué
+vuelvo ahora a él. Bueno, antes de nada os dejo el enlace a mi &lt;a href=&#34;https://github.com/jlgarhdez/vim&#34;&gt;carpeta de configuración
+de Vim&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Por qué lo&amp;nbsp;dejé&lt;/h3&gt;
+
+&lt;p&gt;Pues ahora mismo no recuerdo bien. Creo que lo dejé porque descubrí 
+&lt;a href=&#34;http://www.jetbrains.com/phpstorm/&#34;&gt;Phpstorm&lt;/a&gt;. Bueno, yo desarrollo en &lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;, y 
+editores buenos para php hay pocos. Es un &lt;span class=&#34;caps&#34;&gt;IDE&lt;/span&gt; bastante potente hecho por los amigos 
+de Jetbrains. Probablemente conozcáis IntelliJ &lt;span class=&#34;caps&#34;&gt;IDEA&lt;/span&gt;, para Java. Lo de los &lt;span class=&#34;caps&#34;&gt;IDE&lt;/span&gt;´s al 
+principio me flipó bastante -Los descubrí, yo creo con Eclipse para Java-. Luego,
+cuando empiezan a comer memoria como Zombies hambrientos, ya harta más. Por ésto 
+me pasé a PhpStorm, es potente, rápido -comparado con Eclipse- , el autocompletado
+no está&amp;nbsp;mal&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;Tiene muchas cosas buenas PhpStorm&amp;#8230; Pero también muchas malas. Es pesado, lento
+&amp;#8212; contra Vim/ Sublime/ Textmate&amp;#8230;&amp;#8212;, de pago, y sobre todo, poco&amp;nbsp;configurable.&lt;/p&gt;
+
+&lt;p&gt;Después de PhpStorm estuve un tiempo con Sublime Text 2. Aparte de los cursores
+múltiples que, aceptémoslo, es una killer feature, no tiene nada para mí. Cosa[s]
+buena[s] de Sublime Text para mí, los cursores múltiples. Lo &amp;#8220;malo&amp;#8221; es que es 
+suficientemente buena como para cambiarse. Agiliza muchísimo el tratamiento de 
+textos grandes. Pero para programar en sí, no aporta&amp;nbsp;nada.&lt;/p&gt;
+
+&lt;p&gt;Cosas malas que veo de Sublime: para ser un editor &amp;#8220;ligero&amp;#8221; es &lt;strong&gt;pesado&lt;/strong&gt;. En una
+ocasión se me ocurrió abrir un backup de 100M para hacer unas modificaciones y 
+me tocó tirar de &lt;em&gt;forceclose&lt;/em&gt;. Y, sobre todo, no es software&amp;nbsp;libre.&lt;/p&gt;
+
+&lt;h3&gt;Por qué&amp;nbsp;vuelvo&lt;/h3&gt;
+
+&lt;p&gt;Vuelvo a Vim por muchas razones, pero en el top&amp;nbsp;están:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;El poder mantener mi configuración entre máquinas.&lt;/strong&gt;
+Bueno, ésto no es un problema para un editor no configurable, pero para otro que
+sí lo sea, lo&amp;nbsp;es.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Como toda la configuración va sobre archivos de texto, es totalmente versionable.
+Yo tengo mi carpeta de configuración en Github. Por lo que si quiero tener mi Vim
+en cualquier otra máquina, sólamente necesito tres&amp;nbsp;comandos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~/
+git clone https://github.com/jlgarhdez/vim.git .vim
+ln -s .vim/vimrc .vimrc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Se puede customizar hasta la médula.&lt;/strong&gt;
+Todo lo que se te ocurra existe en vim. De hecho, todo lo que existe en Unix, existe
+en&amp;nbsp;Vim.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Te vuelve RÁ&lt;span class=&#34;caps&#34;&gt;PIDO&lt;/span&gt;.&lt;/strong&gt;
+Todos los gurús de Vim dicen lo mismo para cuando empiezas. Que desmapees las
+flechas del teclado y uses hjkl para&amp;nbsp;moverte.&lt;/p&gt;
+&lt;p&gt;Al principio cuando usaba Vim usaba las teclas de dirección para moverme pero, 
+aunque parezca que no, ralentizan. Una vez sabes cómo, eres más rápido con las 
+teclas especiales de Vim que con las teclas de&amp;nbsp;dirección.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integración total con &lt;span class=&#34;caps&#34;&gt;UNIX&lt;/span&gt;.&lt;/strong&gt;
+Cualquier herramienta de &lt;span class=&#34;caps&#34;&gt;CLI&lt;/span&gt; que tengas instalada en el equipo es acesible desde
+Vim con&amp;nbsp;:!nombreDelBinario.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Conclusión&lt;/h3&gt;
+
+&lt;p&gt;Os aconsejaría a todos a probar Vim, aunque sea sólo como editor &amp;#8220;ligero&amp;#8221;, ese que
+usamos para editar los &lt;span class=&#34;caps&#34;&gt;TXT&lt;/span&gt; o el&amp;nbsp;/etc/hosts.&lt;/p&gt;            </content>
+        </entry>
+    </feed>

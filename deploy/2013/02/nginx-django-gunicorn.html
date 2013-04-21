@@ -1,0 +1,182 @@
+<!doctype html>
+<!-- https://github.com/paulirish/html5-boilerplate/blob/master/index.html -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="">
+
+  <!-- encoding must be specified within the first 512 bytes
+        www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset -->
+
+  <!-- meta element for compatibility mode needs to be before
+        all elements except title & meta
+        msdn.microsoft.com/en-us/library/cc288325(VS.85).aspx -->
+  <!-- Chrome Frame is only invoked if meta element for
+        compatibility mode is within the first 1K bytes
+        code.google.com/p/chromium/issues/detail?id=23003 -->
+
+  <title>Nginx, Django y Green Unicorn, magia negra</title>
+  <meta name="description" content="">
+  <meta name="author" content="José Luis García">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="">
+
+    <!-- Place favicon.ico & apple-touch-icon.png
+        in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="">
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/media/css/site.css">
+  <link rel="stylesheet" href="/media/css/syntax.css">
+  <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/media/css/bootstrap-responsive.min.css">
+  
+    <!-- All JavaScript at the bottom, except for Modernizr which
+        enables HTML5 elements & feature detects -->
+    <script src="/media/js/libs/modernizr-1.7.min.js"></script>
+    </head>
+<body id="nginx-django-gunicorn">
+    <div id="container">
+            <div id="main" role="main">
+          <header class="banner clearfix">
+          
+		  <h1 class="logo">jlgarcia</h1>
+
+                              <nav class=main_nav>
+    <ul>
+                <li>
+            <a title="Home Page"
+                class="button white home"
+                href="/index.html">
+                Home
+            </a>
+        </li>        <li>
+            <a title="About"
+                class="button white about"
+                href="/about.html">
+                About
+            </a>
+        </li>        <li>
+            <a title="Feed"
+                class="button white feed"
+                href="/atom.xml">
+                Feed
+            </a>
+        </li>    </ul>
+</nav>
+                    </header>
+          <section class="content">
+          <article class="post">
+<h2 class="title">
+    <a href="/2013/02/nginx-django-gunicorn.html">
+        Nginx, Django y Green Unicorn, magia negra
+    </a>
+</h2>
+<time datetime="2013-02-10">
+    Posted: Sun, 10 Feb 2013
+</time>
+
+<p>Para estrenar el blog, vamos con un buen ladrillo. Vamos a hablar sobre cómo 
+está montada ésta&nbsp;web.</p>
+
+<h3>Intro</h3>
+
+<p>Ésta web la he creado principalmente, para aprender. En ella uso Django, Ngnix,
+    Gunicorn&#8230; Os lo muestro con una imagen para que quede más&nbsp;claro. </p>
+
+<p><img src="https://lh5.googleusercontent.com/-0UP-0ib7FOs/UK1IVdhOd_I/AAAAAAAAASk/F9Xt-OPjznE/s512/jlgarcia.me.jpg"></p>
+
+<h3>Nginx</h3>
+
+<p>En este caso, Nginx lo estoy usando como proxy sólamente. Uso Nginx en vez de 
+Apache, Lighttp o FastCGI porque&#8230; bueno&#8230; es lo más jodido trendy, todo el 
+mundo quiere a Nginx. No, ahora en serio, lo uso porque Apache lo he usado en 
+ocasiones anteriores, y lo que necesito es un proxy que redirija el tráfico que 
+vaya hacia <a href="jlgarcia.me/blog">jlgarcia.me/blog</a>  a un puerto en el que 
+corre Green&nbsp;Unicorn.</p>
+
+<p>
+La configuración que uso en Nginx es la siguiente:
+<pre>server {
+     server_name jlgarcia.me;
+     access_log /var/log/nginx/nginx_access.log;
+     location / {
+          alias /var/www/;
+     }
+     location /blog {
+          proxy_pass    http://127.0.0.1:1337/blog;
+     }
+     location /static {
+          alias /var/www/static/;
+     }
+}
+</pre>
+</p><p>
+Lo que hacemos en esta configuración es:
+<ul>
+     <li>Servir el dominio&nbsp;jlgarcia.me</li>
+     <li>Enviar las peticiones a <a href="http://jlgarcia.me">jlgarcia.me</a> a 
+     la carpeta raíz de mi&nbsp;servidor</li>
+     <li>Pasar las peticiones al <a href="http://jlgarcia.me/blog">jlgarcia.me/blog</a> 
+     al servidor que está corriendo en el puerto 1337 en nuestra máquina mediante 
+     Green&nbsp;Unicorn</li>
+     <li>Servir el contenido estático (<span class="caps">CSS</span>, Javascript, imágenes&#8230;) de nuestra 
+     carpeta&nbsp;Static</li>
+</ul>
+</p>
+<h3>Sobre Green&nbsp;Unicorn</h3> 
+<p>
+ Con Gunicorn, lo que hacemos es servir en sí el contenido de Django. Es bastante 
+ fácil de usar y configuración requiere cero. Lo que he hecesitado para que 
+ funcione es instalarlo:
+ <pre>sudo pip install gunicorn</pre>
+ Después añadirlo a las installed apps de Django en la configuración y, por 
+ último, parra arrancar el servidor uso la siguiente instrucción:
+ <pre>./manage.py run_gunicorn -b 127.0.0.1:1337 --daemon</pre>
+ Ésto lo que hace es correr el servidor en modo &#8220;daemon&#8221; en el puerto 1337. Rly&nbsp;Ez!
+
+</p>
+
+<h3>Bootstrap</h3>
+
+<p>
+Aceptémoslo, el frontend para un retrasado visual —como yo— es bastante jodido. 
+Lo que quería para ésta web era un diseño que no necesitara imágenes principalmente 
+—de hecho no tengo ninguna hecha por mí en todo el diseño— Además tenemos el que 
+es completamente responsive, que es un estándar y que es bastante&nbsp;bonito. 
+</p>
+
+<p>
+Espero haber dado suficiente coñazo&#8230; Nos&nbsp;vemos!
+</p></article>          </section>
+      </div>
+      </div> <!--! end of #container -->
+  <footer>
+      Powered by <a href="http://ringce.com/hyde">hyde</a>.
+  </footer>
+      <script src="/media/js/bootstrap.min.js"></script>
+  <!-- Javascript at the bottom for fast page loading -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
+  
+    
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+      
+  </body>
+</html>

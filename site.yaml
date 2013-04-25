@@ -43,3 +43,5 @@ sorter:
         filters:
             source.kind: html
             meta.listable: true
+syntax:
+    use_figure: false

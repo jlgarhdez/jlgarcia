@@ -10,8 +10,7 @@
     margin: 0;
 }
 
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
+article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
@@ -51,7 +50,7 @@ table {
 }
 
 footer {
-	margin: auto;
+	margin: 40px auto;
 	width: 600px;
 }
 
@@ -91,6 +90,10 @@ a {
 	color: #57ad68;
 }
 
+a:hover {
+	color: #57ad68;
+}
+
 h2.title {
     font-family: 'Playfair Display', serif;
 	font-style: italic;
@@ -99,6 +102,10 @@ h2.title {
 
 h2.title a {
 	color: #333;
+}
+
+h2.title a:hover {
+	color: #57ad68;
 }
 
 article {
@@ -132,3 +139,6 @@ article h3 a {
 	color: #333;
 }
 
+article h3 a:hover {
+	color: #57ad68;
+}

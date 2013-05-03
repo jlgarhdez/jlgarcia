@@ -14,18 +14,6 @@ context:
         tweet_via: ringce
         menu:
             -
-                name: Home
-                description: Home Page
-                css_class: home
-                type: page
-                url: index.html
-            #-
-                #name: About
-                #description: About
-                #css_class: about
-                #type: page
-                #url: about.html
-            -
                 name: Feed
                 description: Feed
                 css_class: feed

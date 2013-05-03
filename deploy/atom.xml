@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2013-04-25T22:05:02Z</updated>
+    <updated>2013-05-04T01:28:14Z</updated>
 
     <id>/atom.xml/</id>
 
@@ -201,8 +201,8 @@ Espero haber dado suficiente coñazo&amp;#8230; Nos&amp;nbsp;vemos!
             
             <content type="html">
                                 &lt;p&gt;En este post quiero hablaros de Vim, de por qué dejé de usarlo y de por qué
-vuelvo ahora a él. Bueno, antes de nada os dejo el enlace a mi &lt;a href=&#34;https://github.com/jlgarhdez/vim&#34;&gt;carpeta de configuración
-de Vim&lt;/a&gt;.&lt;/p&gt;
+vuelvo ahora a él. Bueno, antes de nada os dejo el enlace a mi 
+&lt;a href=&#34;https://github.com/jlgarhdez/vim&#34;&gt;carpeta de configuración de Vim&lt;/a&gt;&amp;nbsp;.&lt;/p&gt;
 
 &lt;h3&gt;Por qué lo&amp;nbsp;dejé&lt;/h3&gt;
 
@@ -233,10 +233,10 @@ me tocó tirar de &lt;em&gt;forceclose&lt;/em&gt;. Y, sobre todo, no es software
 &lt;p&gt;Vuelvo a Vim por muchas razones, pero en el top&amp;nbsp;están:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;El poder mantener mi configuración entre máquinas.&lt;/strong&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;El poder mantener mi configuración entre máquinas.&lt;/strong&gt;
 Bueno, ésto no es un problema para un editor no configurable, pero para otro que
-sí lo sea, lo&amp;nbsp;es.&lt;/li&gt;
-&lt;/ol&gt;
+sí lo sea, lo&amp;nbsp;es.&lt;/p&gt;
 
 &lt;p&gt;Como toda la configuración va sobre archivos de texto, es totalmente versionable.
 Yo tengo mi carpeta de configuración en Github. Por lo que si quiero tener mi Vim
@@ -246,8 +246,7 @@ en cualquier otra máquina, sólamente necesito tres&amp;nbsp;comandos:&lt;/p&gt
 git clone https://github.com/jlgarhdez/vim.git .vim
 ln -s .vim/vimrc .vimrc
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Se puede customizar hasta la médula.&lt;/strong&gt;
 Todo lo que se te ocurra existe en vim. De hecho, todo lo que existe en Unix, existe
 en&amp;nbsp;Vim.&lt;/p&gt;&lt;/li&gt;

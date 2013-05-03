@@ -40,10 +40,10 @@
   {% block css %}
   <link rel="stylesheet" href="">
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.min.css') }}">
+  <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
   {% endblock css %}
 
   {% block headjs %}
@@ -75,7 +75,7 @@
           {% block header -%}
           {%- endblock %}
 
-		  <h1 class="logo">jlgarcia</h1>
+		  <h1 class="logo"><a href="http://jlgarcia.me">jl<span class="highlight">·</span>garcia</a></h1>
 
           {% block nav %}
           {% from "macros.j2" import render_nav with context %}

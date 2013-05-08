@@ -1,0 +1,246 @@
+<!doctype html>
+<!-- https://github.com/paulirish/html5-boilerplate/blob/master/index.html -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="">
+
+  <!-- encoding must be specified within the first 512 bytes
+        www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset -->
+
+  <!-- meta element for compatibility mode needs to be before
+        all elements except title & meta
+        msdn.microsoft.com/en-us/library/cc288325(VS.85).aspx -->
+  <!-- Chrome Frame is only invoked if meta element for
+        compatibility mode is within the first 1K bytes
+        code.google.com/p/chromium/issues/detail?id=23003 -->
+
+  <title>Sobre cómo uso Vim</title>
+  <meta name="description" content="">
+  <meta name="author" content="José Luis García">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="">
+
+    <!-- Place favicon.ico & apple-touch-icon.png
+        in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="">
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/media/css/syntax.css">
+  <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/media/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="/media/css/site.css">
+  
+    <!-- All JavaScript at the bottom, except for Modernizr which
+        enables HTML5 elements & feature detects -->
+    <script src="/media/js/libs/modernizr-1.7.min.js"></script>
+      <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36608574-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body id="como-uso-vim">
+    <div id="container">
+            <div id="main" role="main">
+          <header class="banner clearfix">
+          
+		  <h1 class="logo"><a href="http://jlgarcia.me">jl<span class="highlight">·</span>garcia</a></h1>
+
+                              
+                    </header>
+          <section class="content">
+          <article class="post">
+<h2 class="title">
+    <a href="/2013/05/como-uso-vim.html">
+        Sobre cómo uso Vim
+    </a>
+</h2>
+<time datetime="2013-05-07">
+    Posted: Tue, 07 May 2013
+</time>
+
+<p>Quiero contar cómo utilizo Vim yo en el día a día. No sólo lo uso para escribir
+código sino para cualquier tarea de edición de texto, como contaba en mi
+anterior&nbsp;artículo.</p>
+<p>He de dejar claro que no soy para nada un gurú de Vim. De hecho tengo muchas
+manías a la hora de editar que pondrían de los nervios a más de uno. Por
+ejemplo, no suelo usar <code>$</code> para ir al final de la línea, sino que hago <code>&lt;esc&gt;A.</code>
+Esto lo hago porque tengo remapeada la tecla Bloc Mayus –a mi entender, la tecla
+más inutil del teclado– a <code>&lt;esc&gt;</code>, lo que vuelve realmente cómodo hacer <code>&lt;esc&gt;A.</code></p>
+<p>Otra de las cosas que no uso de Vim es la navegación entre bloques con [ y ]. No
+lo uso básicamente, porque en el layout español del teclado Qwerty es bastante
+incómodo acceder a esas&nbsp;teclas.</p>
+<h2 id="indice">Índice</h2>
+<div class="toc">
+<ul>
+<li><a href="#indice">Índice</a></li>
+<li><a href="#configuracion">Configuración</a><ul>
+<li><a href="#diferencias-entre-lenguajes-y-extensiones">Diferencias entre lenguajes y&nbsp;extensiones</a></li>
+<li><a href="#funciones">Funciones</a></li>
+</ul>
+</li>
+<li><a href="#plugins">Plugins</a><ul>
+<li><a href="#nerdtree">NERDTree</a></li>
+<li><a href="#ctr-p">Ctr-p</a></li>
+<li><a href="#tagbar">Tagbar</a></li>
+<li><a href="#gundo">Gundo</a></li>
+</ul>
+</li>
+<li><a href="#workflow">Workflow</a></li>
+</ul>
+</div>
+<h2 id="configuracion">Configuración</h2>
+<p>Aquí va una lista de mis <em>vimeros</em> de referencia. A mí al menos me sirve
+bastante stalkear un poco a esta gente y ver cómo hacen las cosas con Vim.
+Aparte, algunos como <a href="http://www.youtube.com/watch?v=xZuy4gBghho">Steve Losh</a>
+tienen videos hablando sobre su configuración de vimrc en&nbsp;Youtube.</p>
+<ul>
+<li><a href="http://github.com/sjl">Steve&nbsp;Losh</a></li>
+<li><a href="http://github.com/tpope">Tim&nbsp;Pope</a></li>
+<li><a href="http://github.com/scrooloose">Martin Grenfel –<span class="caps">A.K.</span>A&nbsp;Scrooloose–</a></li>
+<li><a href="http://github.com/shawncplus">Shawn&nbsp;Biddle</a></li>
+<li><a href="http://github.com/wycats">Yehuda&nbsp;Katz</a></li>
+</ul>
+<p>También dejo <a href="http://github.com/jlgarhdez/vim">mis dotfiles</a> para que podáis
+verlas y consultar lo que queráis. Las tengo guardadas en un repositorio Git y
+los plugins están configurados por módulos de Git, de tal manera que, en caso de
+que se requiera actualizar cualquiera de ellos, puedo hacerlo con un&nbsp;simple:</p>
+<pre><code>git submodule update nombreDelModulo
+</code></pre>
+<h3 id="diferencias-entre-lenguajes-y-extensiones">Diferencias entre lenguajes y&nbsp;extensiones</h3>
+<p>Aunque sé de gente que utiliza distintos archivos de configuración dependiendo
+del lenguaje que esté utilizando, no es la manera que tengo yo de trabajar.
+Como yo lo hago es con un solo archivo <code>.vimrc</code> que contiene ciertos autocommands
+que se ejecutan dependiendo del filetype, por&nbsp;ejemplo:</p>
+<div class="highlight"><pre>augroup ft_php<br />    <span class="k">au</span><span class="p">!</span><br />    <span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">P</span> :<span class="p">!</span>open http:<span class="sr">//</span>www.php.net/<span class="p">&lt;</span>cword<span class="p">&gt;&lt;</span><span class="k">cr</span><span class="p">&gt;</span><br />    <span class="k">au</span> <span class="nb">FileType</span> php <span class="k">setlocal</span> <span class="nb">foldmethod</span><span class="p">=</span><span class="nb">syntax</span><br />    <span class="k">au</span> <span class="nb">FileType</span> php <span class="k">setlocal</span> <span class="nb">expandtab</span><br />    <span class="k">au</span> <span class="nb">FileType</span> php <span class="k">setlocal</span> <span class="nb">tabstop</span><span class="p">=</span><span class="m">4</span><br />    <span class="k">au</span> <span class="nb">FileType</span> php <span class="k">setlocal</span> <span class="nb">keywordprg</span><span class="p">=</span>pman<br />    <span class="k">au</span> <span class="nb">FileType</span> php <span class="nb">inoremap</span> <span class="p">&lt;</span>C<span class="p">-</span><span class="k">o</span><span class="p">&gt;</span> :<span class="k">set</span> <span class="nb">paste</span><span class="p">&lt;</span><span class="caps">CR</span><span class="p">&gt;</span>:exe PhpDoc<span class="p">()&lt;</span><span class="caps">CR</span><span class="p">&gt;</span>:<span class="k">set</span> <span class="nb">nopaste</span><span class="p">&lt;</span><span class="caps">CR</span><span class="p">&gt;</span><span class="k">i</span><br />augroup <span class="caps">END</span><br /></pre></div>
+
+<p><br />
+¿Qué hace este grupo de autocommands? pues lo primero, indica que los fold sean
+por sintáxis, no por indentación ni por un marcador. En las siguientes dos
+líneas, obligamos a que se cambien las tabulaciones por cuatro espacios
+(Estándar de Symfony). En la penúltima, hacemos que cuando se quiera consultar
+una keyword de php se use pman, una utilidad para consultar el manual de php
+desde la línea de comandos. Por último, incluyo el atajo de teclado <C-o> para
+que se inserte el&nbsp;PHPdoc.</p>
+<h3 id="funciones">Funciones</h3>
+<p>En mi archivo de configuración tengo varias funciones. Las dejo en el archivo de
+configuración mientras son los suficientemente pequeñas como para no molestar.
+Ha habido otras veces que he creado plugins a partir de funciones, porque, por
+su naturaleza, no debían estar en el&nbsp;.vimrc.</p>
+<p>Estas funciones son relativamente interesantes, sobre todo si programais <span class="caps">PHP</span>. La
+primera de ellas, la creé a partir de un video que del gran
+<a href="http://twitter.com/moisesgallego">@moisesgallego</a> hablando sobre Emacs. En el
+video, muestra un poco qué es Emacs Lisp creando una función realmente útil para
+<span class="caps">PHP</span>. La función lo que hace es pedirte el nombre de una variable y escribir un
+var_dump() de la variable dentro de dos etiquetas <code>&lt;pre&gt;</code> y mostrando también
+el archivo en que se encuentra el <code>var_dump()</code>, para que no se nos olviden trazas.
+Aquí tenéis mi implementación de <code>Jeanclaude var_dump()</code> en&nbsp;Vimscript:</p>
+<div class="highlight"><pre><span class="k">function</span><span class="p">!</span> JeanClaude<span class="p">()</span><br />&nbsp;<br />    <span class="k">let</span> <span class="nb">path</span> <span class="p">=</span> <span class="s2">&quot;echo &#39;var_dump() en &quot;</span> . @% . <span class="s2">&quot;&#39;;&quot;</span><br />    <span class="k">let</span> openpre <span class="p">=</span> <span class="s2">&quot;echo &#39;&lt;pre&gt;&#39;;&quot;</span><br />    <span class="k">let</span> closepre <span class="p">=</span> <span class="s2">&quot;echo &#39;&lt;/pre&gt;&#39;;&quot;</span><br />    <span class="k">let</span> nombre <span class="p">=</span> inputdialog<span class="p">(</span><span class="s2">&quot;nombre de la variable: &quot;</span><span class="p">)</span><br />&nbsp;<br />    exec <span class="s2">&quot;normal! O&quot;</span> . <span class="nb">path</span>  . <span class="s2">&quot;\n&quot;</span> . openpre . <span class="s2">&quot;\nvar_dump($&quot;</span> . nombre . <span class="s2">&quot;);\n&quot;</span> . closepre<br /><span class="k">endfunction</span><br />&nbsp;<br />command<span class="p">!</span> <span class="p">-</span><span class="k">bar</span> <span class="p">-</span>narg<span class="p">=</span><span class="m">0</span> Jeanclaude <span class="k">call</span> JeanClaude<span class="p">()</span><br /></pre></div>
+
+<p><br />
+Al final, después de la función, creo el comando <code>:Jeanclaude</code> para ejecutar la
+función de manera más cómoda que <code>:call JeanClaude()</code></p>
+<p>Otra de las funciones que tengo en mi vimrc es un asistente para crear getters
+y setters de un atributo de clase cuando tienes el cursor en esa linea. Aviso:
+no es el código más bonito que he escrito en mi vida, no es <span class="caps">PSR</span> compliant,
+y mil cosas más&#8230; pero&nbsp;funciona.</p>
+<div class="highlight"><pre><span class="k">function</span><span class="p">!</span> <span class="k">s</span>:CreateGetterSetter<span class="p">()</span><br />    <span class="k">let</span> line <span class="p">=</span> getline<span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><br />&nbsp;<br />    <span class="k">let</span> getterStart <span class="p">=</span> <span class="s2">&quot;()\n{\nreturn $this-&gt;&quot;</span><br />    <span class="k">let</span> setterStart <span class="p">=</span> <span class="s2">&quot;($nombre)\n{\nthis-&gt;&quot;</span><br />&nbsp;<br />    <span class="k">let</span> nombreDelMetodo <span class="p">=</span> substitute<span class="p">(</span>substitute<span class="p">(</span>substitute<span class="p">(</span>substitute<span class="p">(</span>substitute<span class="p">(</span>substitute<span class="p">(</span>line<span class="p">,</span> <span class="s2">&quot;[\t*]public \\$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="s2">&quot;[\t*]protected &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="s2">&quot;[\t*]private &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="s2">&quot;\\$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="s2">&quot;[=.*]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><br />    <span class="k">let</span> nombreDelMetodo <span class="p">=</span> split<span class="p">(</span>nombreDelMetodo<span class="p">)</span>[<span class="m">0</span>]<br />&nbsp;<br />    exec <span class="s2">&quot;normal! opublic function get_&quot;</span> . nombreDelMetodo . getterStart . nombreDelMetodo . <span class="s2">&quot;;\n}\n&quot;</span><br />    exec <span class="s2">&quot;normal! opublic function set_&quot;</span> . nombreDelMetodo . setterStart . nombreDelMetodo  . <span class="s2">&quot; = $nombre;\n}\n&quot;</span><br />&nbsp;<br /><span class="k">endfunction</span><br />&nbsp;<br />command<span class="p">!</span> Gs <span class="k">call</span> <span class="k">s</span>:CreateGetterSetter<span class="p">()</span><br />&nbsp;<br /><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">gs</span> :Gs<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span><br /></pre></div>
+
+<p><br />
+Por último, para ilustrar un poco más las funciones que utilizo, os enseño una
+que acabo de crear para cambiar de colorscheme&nbsp;rápidamente:</p>
+<div class="highlight"><pre><span class="k">function</span><span class="p">!</span> ToggleColorscheme<span class="p">()</span><br />    <span class="k">if</span> <span class="p">(</span><span class="k">g</span>:colors_name <span class="p">==</span> <span class="s2">&quot;solarized&quot;</span><span class="p">)</span><br />        <span class="k">colorscheme</span> Molokai<br />    <span class="k">else</span><br />        <span class="k">colorscheme</span> solarized<br />        <span class="k">set</span> <span class="nb">background</span><span class="p">=</span><span class="nb">light</span><br />    <span class="k">endif</span><br /><span class="k">endfunction</span><br /><span class="nb">nnoremap</span> <span class="p">&lt;</span>f7<span class="p">&gt;</span> :<span class="k">call</span> ToggleColorscheme<span class="p">()&lt;</span><span class="k">cr</span><span class="p">&gt;</span><br /></pre></div>
+
+<p><br />
+Lo que hace esta última función es comprobar el colorscheme que estamos usando,
+y dependiendo de cuál sea, aplica uno u otro. Yo actualmente utilizo sólo dos:
+Molokai (el <a href="https://bitbucket.org/sjl/dotfiles/src/63c73a196ade1b128464dad2a0595c6ecc884c21/vim/colors/molokai.vim?at=default">fork</a>
+de Steve Losh) y Solarized (de Ethan&nbsp;Schoonover).</p>
+<h2 id="plugins">Plugins</h2>
+<p>El editor Vim es excelente, no por Vim en sí –que también– sino por la gran
+comunidad de desarrolladores de plugins que hay. Es fascinante que aunque una
+funcionalidad no esté listada en
+<a href="http://www.vim.org/scripts/index.php">Vim Scripts</a> siempre puedes encontrar algo
+parecido a lo que buscas buceando en los dotfiles de algún programador que&nbsp;conozcas.</p>
+<p>Algunos de los plugins que más utilizo son los&nbsp;siguientes:</p>
+<h3 id="nerdtree"><a href="https://github.com/scrooloose/nerdtree">NERDTree</a></h3>
+<p>Un gran plugin para manejo del sistema de archivos desde Vim. Permite mostrar
+un árbol de directorios desde el el punto del sistema de archivos en que nos
+encontremos en Vim <code>:pwd</code>.</p>
+<p>Yo lo tengo mapeado para que alterne entre mostrar y ocultar con <F2>:</p>
+<div class="highlight"><pre>map <span class="p">&lt;</span>F2<span class="p">&gt;</span> :NERDTreeToggle<span class="p">&lt;</span><span class="caps">CR</span><span class="p">&gt;</span><br /></pre></div>
+
+<p><br />
+Aparte de para mostrar el árbol de directorios, es muy útil para crear, borrar,
+copiar y mover archivos. Esto lo podemos hacer pulsando <code>m</code> en modo normal
+encima del archivo que queramos, lo cual mostrará un menú con las opciones de
+copiar, mover, crear, borrar, mostrar en&nbsp;Finder&#8230;</p>
+<h3 id="ctr-p"><a href="https://github.com/kien/ctrlp.vim">Ctr-p</a></h3>
+<p>Es un plugin que aporta la funcionalidad de fuzzy file search, como la que tiene
+Textmate. Surgió como alternativa a Command-t, que está escrito en Ruby, por
+lo que necesita que Vim esté compilado con soporte para Ruby, sin embargo ctrl-p
+está escrito entero en&nbsp;Vimscript.</p>
+<p>Es bastante sencillo de usar. Para sacar el menú, simplemente pulsamos <code>&lt;C-p&gt;</code>,
+después simplemente empezamos a escribir y nos muestra archivos dentro del <span class="caps">CWD</span>
+que contienen las letras que vamos escribiendo. Simplemente decir que hace falta
+refrescarlo cada vez que creamos/borramos/movemos archivos. Ésto lo hacemos con
+<code>&lt;F5&gt;</code>.</p>
+<h3 id="tagbar"><a href="https://github.com/majutsushi/tagbar">Tagbar</a></h3>
+<p>Un plugin bastante útil para programar. Muestra un sidebar a la derecha de la
+pantalla en la que aparecen los elementos generados por ctags para el archivo
+actual. Ésta sidebar es navegable, por lo que podemos seleccionar cualquiera de
+los elementos que nos muestra y darle a enter y nos lleva a el en el buffer. Muy&nbsp;cómodo.</p>
+<h3 id="gundo"><a href="https://github.com/sjl/gundo.vim">Gundo</a></h3>
+<p>Plugin muy útil que nos muestra el historial de undo en un sidebar. También es
+navegable, por lo que podemos seleccionar un estado de los que aparecen y al
+darle a enter, volverá el fichero al estado en que se encontraba en ese momento.
+Super bueno para encontrar y resolver&nbsp;bugs.</p>
+<h2 id="workflow">Workflow</h2>
+<p>Últimamente utilizo Git para el control de versiones. Para controlarlo utilizo
+la línea de comandos. He probado Fugitive, el plugin de Git para Vim, creado por
+<a href="http://tpo.pe">Tim Pope</a>, y me parece muy cómodo, pero no me llego a
+acostumbrar. El emulador de terminal que uso es iTerm2. Es bastante potente
+y tiene muy buena integración con&nbsp;Tmux.</p>
+<p>Como navegador, para trabajar uso Firefox, por Pentadactyl. Lo malo es que la
+última version de Firefox con la que funciona Pentadactyl es <span class="caps">FF14</span>, es decir,
+hace 7 versiones. Estoy considerando pasarme otra vez a&nbsp;Chrome.</p></article>          </section>
+      </div>
+      </div> <!--! end of #container -->
+  <footer>
+      Powered by <a href="http://ringce.com/hyde">hyde</a>.
+  </footer>
+      <script src="/media/js/bootstrap.min.js"></script>
+  <!-- Javascript at the bottom for fast page loading -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
+  
+    
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+      
+  </body>
+</html>

@@ -58,6 +58,10 @@ header {
 	height: 70px;
 }
 
+h1, h2, ,h3 {
+	font-weight: normal;
+}
+
 h1.logo {
     font-family: 'Playfair Display', serif;
 	font-size: 30px;
@@ -95,17 +99,11 @@ a:hover {
 }
 
 h2.title {
-    font-family: 'Playfair Display', serif;
-	font-style: italic;
 	font-size: 40px;
 }
 
 h2.title a {
 	color: #333;
-}
-
-h2.title a:hover {
-	color: #57ad68;
 }
 
 article {
@@ -119,6 +117,8 @@ article li {
 }
 
 article p{
+	text-align: justify;
+	text-justify: newspaper;
     margin-bottom: 16px;
 }
 
@@ -131,8 +131,8 @@ article time{
 }
 
 article h3 {
-    font-family: 'Playfair Display', serif;
-	font-size: 35px;
+	font-size: 25px;
+	font-weight: normal;
 }
 
 article h3 a {
@@ -140,5 +140,24 @@ article h3 a {
 }
 
 article h3 a:hover {
-	color: #57ad68;
+	color: #333;
+	text-shadow: 0 0 0.2em #777;
+	text-decoration: none;
+}
+
+pre {
+	overflow-x: scroll;
+	word-break: normal;
+	word-wrap: normal;
+	white-space: pre;
+	border: none;
+	background-color: #fff;
+}
+
+.toc ul{
+	list-style: none;
+}
+
+.toc>ul{
+	margin: 0px 0px 0px 0px;
 }

@@ -13,12 +13,12 @@ context:
     data:
         tweet_via: ringce
         menu:
-            -
-                name: Feed
-                description: Feed
-                css_class: feed
-                type: page
-                url: atom.xml
+            #-
+                #name: Feed
+                #description: Feed
+                #css_class: feed
+                #type: page
+                #url: atom.xml
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00
@@ -33,3 +33,6 @@ sorter:
             meta.listable: true
 syntax:
     use_figure: false
+markdown:
+    extensions:
+        - toc

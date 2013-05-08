@@ -7,10 +7,165 @@
         <link href="/"/>
     
         
-    <updated>2013-05-04T01:37:41Z</updated>
+    <updated>2013-05-09T00:09:22Z</updated>
 
     <id>/atom.xml/</id>
 
+            <entry>
+            <title type="html">Sobre cómo uso Vim</title>
+            <author><name>José Luis García</name></author>
+            <link href="/2013/05/como-uso-vim.html"/>
+            <updated>2013-05-07T18:00:00Z</updated>
+            <published>2013-05-07T18:00:00Z</published>
+            <id>/2013/05/como-uso-vim.html</id>
+            
+            <content type="html">
+                                &lt;p&gt;Quiero contar cómo utilizo Vim yo en el día a día. No sólo lo uso para escribir
+código sino para cualquier tarea de edición de texto, como contaba en mi
+anterior&amp;nbsp;artículo.&lt;/p&gt;
+&lt;p&gt;He de dejar claro que no soy para nada un gurú de Vim. De hecho tengo muchas
+manías a la hora de editar que pondrían de los nervios a más de uno. Por
+ejemplo, no suelo usar &lt;code&gt;$&lt;/code&gt; para ir al final de la línea, sino que hago &lt;code&gt;&amp;lt;esc&amp;gt;A.&lt;/code&gt;
+Esto lo hago porque tengo remapeada la tecla Bloc Mayus –a mi entender, la tecla
+más inutil del teclado– a &lt;code&gt;&amp;lt;esc&amp;gt;&lt;/code&gt;, lo que vuelve realmente cómodo hacer &lt;code&gt;&amp;lt;esc&amp;gt;A.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Otra de las cosas que no uso de Vim es la navegación entre bloques con [ y ]. No
+lo uso básicamente, porque en el layout español del teclado Qwerty es bastante
+incómodo acceder a esas&amp;nbsp;teclas.&lt;/p&gt;
+&lt;h2 id=&#34;indice&#34;&gt;Índice&lt;/h2&gt;
+&lt;div class=&#34;toc&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#indice&#34;&gt;Índice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#configuracion&#34;&gt;Configuración&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#diferencias-entre-lenguajes-y-extensiones&#34;&gt;Diferencias entre lenguajes y&amp;nbsp;extensiones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#funciones&#34;&gt;Funciones&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#plugins&#34;&gt;Plugins&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#nerdtree&#34;&gt;NERDTree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ctr-p&#34;&gt;Ctr-p&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tagbar&#34;&gt;Tagbar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#gundo&#34;&gt;Gundo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#workflow&#34;&gt;Workflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;configuracion&#34;&gt;Configuración&lt;/h2&gt;
+&lt;p&gt;Aquí va una lista de mis &lt;em&gt;vimeros&lt;/em&gt; de referencia. A mí al menos me sirve
+bastante stalkear un poco a esta gente y ver cómo hacen las cosas con Vim.
+Aparte, algunos como &lt;a href=&#34;http://www.youtube.com/watch?v=xZuy4gBghho&#34;&gt;Steve Losh&lt;/a&gt;
+tienen videos hablando sobre su configuración de vimrc en&amp;nbsp;Youtube.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/sjl&#34;&gt;Steve&amp;nbsp;Losh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/tpope&#34;&gt;Tim&amp;nbsp;Pope&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/scrooloose&#34;&gt;Martin Grenfel –&lt;span class=&#34;caps&#34;&gt;A.K.&lt;/span&gt;A&amp;nbsp;Scrooloose–&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/shawncplus&#34;&gt;Shawn&amp;nbsp;Biddle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/wycats&#34;&gt;Yehuda&amp;nbsp;Katz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;También dejo &lt;a href=&#34;http://github.com/jlgarhdez/vim&#34;&gt;mis dotfiles&lt;/a&gt; para que podáis
+verlas y consultar lo que queráis. Las tengo guardadas en un repositorio Git y
+los plugins están configurados por módulos de Git, de tal manera que, en caso de
+que se requiera actualizar cualquiera de ellos, puedo hacerlo con un&amp;nbsp;simple:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git submodule update nombreDelModulo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;diferencias-entre-lenguajes-y-extensiones&#34;&gt;Diferencias entre lenguajes y&amp;nbsp;extensiones&lt;/h3&gt;
+&lt;p&gt;Aunque sé de gente que utiliza distintos archivos de configuración dependiendo
+del lenguaje que esté utilizando, no es la manera que tengo yo de trabajar.
+Como yo lo hago es con un solo archivo &lt;code&gt;.vimrc&lt;/code&gt; que contiene ciertos autocommands
+que se ejecutan dependiendo del filetype, por&amp;nbsp;ejemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;augroup ft_php&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;nb&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;P&lt;/span&gt; :&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;open http:&lt;span class=&#34;sr&#34;&gt;//&lt;/span&gt;www.php.net/&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;cword&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;k&#34;&gt;setlocal&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;foldmethod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;syntax&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;k&#34;&gt;setlocal&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;expandtab&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;k&#34;&gt;setlocal&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;tabstop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;4&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;k&#34;&gt;setlocal&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;keywordprg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;pman&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;nb&#34;&gt;inoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;paste&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;caps&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;:exe PhpDoc&lt;span class=&#34;p&#34;&gt;()&amp;lt;&lt;/span&gt;&lt;span class=&#34;caps&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;:&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;nopaste&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;caps&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;i&lt;/span&gt;&lt;br /&gt;augroup &lt;span class=&#34;caps&#34;&gt;END&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+¿Qué hace este grupo de autocommands? pues lo primero, indica que los fold sean
+por sintáxis, no por indentación ni por un marcador. En las siguientes dos
+líneas, obligamos a que se cambien las tabulaciones por cuatro espacios
+(Estándar de Symfony). En la penúltima, hacemos que cuando se quiera consultar
+una keyword de php se use pman, una utilidad para consultar el manual de php
+desde la línea de comandos. Por último, incluyo el atajo de teclado &lt;C-o&gt; para
+que se inserte el&amp;nbsp;PHPdoc.&lt;/p&gt;
+&lt;h3 id=&#34;funciones&#34;&gt;Funciones&lt;/h3&gt;
+&lt;p&gt;En mi archivo de configuración tengo varias funciones. Las dejo en el archivo de
+configuración mientras son los suficientemente pequeñas como para no molestar.
+Ha habido otras veces que he creado plugins a partir de funciones, porque, por
+su naturaleza, no debían estar en el&amp;nbsp;.vimrc.&lt;/p&gt;
+&lt;p&gt;Estas funciones son relativamente interesantes, sobre todo si programais &lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;. La
+primera de ellas, la creé a partir de un video que del gran
+&lt;a href=&#34;http://twitter.com/moisesgallego&#34;&gt;@moisesgallego&lt;/a&gt; hablando sobre Emacs. En el
+video, muestra un poco qué es Emacs Lisp creando una función realmente útil para
+&lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;. La función lo que hace es pedirte el nombre de una variable y escribir un
+var_dump() de la variable dentro de dos etiquetas &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; y mostrando también
+el archivo en que se encuentra el &lt;code&gt;var_dump()&lt;/code&gt;, para que no se nos olviden trazas.
+Aquí tenéis mi implementación de &lt;code&gt;Jeanclaude var_dump()&lt;/code&gt; en&amp;nbsp;Vimscript:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; JeanClaude&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;echo &amp;#39;var_dump() en &amp;quot;&lt;/span&gt; . @% . &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;#39;;&amp;quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; openpre &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;echo &amp;#39;&amp;lt;pre&amp;gt;&amp;#39;;&amp;quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; closepre &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;echo &amp;#39;&amp;lt;/pre&amp;gt;&amp;#39;;&amp;quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; nombre &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; inputdialog&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;nombre de la variable: &amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    exec &lt;span class=&#34;s2&#34;&gt;&amp;quot;normal! O&amp;quot;&lt;/span&gt; . &lt;span class=&#34;nb&#34;&gt;path&lt;/span&gt;  . &lt;span class=&#34;s2&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt; . openpre . &lt;span class=&#34;s2&#34;&gt;&amp;quot;\nvar_dump($&amp;quot;&lt;/span&gt; . nombre . &lt;span class=&#34;s2&#34;&gt;&amp;quot;);\n&amp;quot;&lt;/span&gt; . closepre&lt;br /&gt;&lt;span class=&#34;k&#34;&gt;endfunction&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;command&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;bar&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;narg&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; Jeanclaude &lt;span class=&#34;k&#34;&gt;call&lt;/span&gt; JeanClaude&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Al final, después de la función, creo el comando &lt;code&gt;:Jeanclaude&lt;/code&gt; para ejecutar la
+función de manera más cómoda que &lt;code&gt;:call JeanClaude()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Otra de las funciones que tengo en mi vimrc es un asistente para crear getters
+y setters de un atributo de clase cuando tienes el cursor en esa linea. Aviso:
+no es el código más bonito que he escrito en mi vida, no es &lt;span class=&#34;caps&#34;&gt;PSR&lt;/span&gt; compliant,
+y mil cosas más&amp;#8230; pero&amp;nbsp;funciona.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;s&lt;/span&gt;:CreateGetterSetter&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; line &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; getline&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; getterStart &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;()\n{\nreturn $this-&amp;gt;&amp;quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; setterStart &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;($nombre)\n{\nthis-&amp;gt;&amp;quot;&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; nombreDelMetodo &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;line&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;[\t*]public \\$&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;[\t*]protected &amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;[\t*]private &amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;\\$&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;[=.*]&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; nombreDelMetodo &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; split&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;nombreDelMetodo&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;[&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;]&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    exec &lt;span class=&#34;s2&#34;&gt;&amp;quot;normal! opublic function get_&amp;quot;&lt;/span&gt; . nombreDelMetodo . getterStart . nombreDelMetodo . &lt;span class=&#34;s2&#34;&gt;&amp;quot;;\n}\n&amp;quot;&lt;/span&gt;&lt;br /&gt;    exec &lt;span class=&#34;s2&#34;&gt;&amp;quot;normal! opublic function set_&amp;quot;&lt;/span&gt; . nombreDelMetodo . setterStart . nombreDelMetodo  . &lt;span class=&#34;s2&#34;&gt;&amp;quot; = $nombre;\n}\n&amp;quot;&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;&lt;span class=&#34;k&#34;&gt;endfunction&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;command&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; Gs &lt;span class=&#34;k&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;s&lt;/span&gt;:CreateGetterSetter&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;&lt;span class=&#34;nb&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;gs&lt;/span&gt; :Gs&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Por último, para ilustrar un poco más las funciones que utilizo, os enseño una
+que acabo de crear para cambiar de colorscheme&amp;nbsp;rápidamente:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; ToggleColorscheme&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;g&lt;/span&gt;:colors_name &lt;span class=&#34;p&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;solarized&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;br /&gt;        &lt;span class=&#34;k&#34;&gt;colorscheme&lt;/span&gt; Molokai&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;br /&gt;        &lt;span class=&#34;k&#34;&gt;colorscheme&lt;/span&gt; solarized&lt;br /&gt;        &lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;background&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;light&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;endif&lt;/span&gt;&lt;br /&gt;&lt;span class=&#34;k&#34;&gt;endfunction&lt;/span&gt;&lt;br /&gt;&lt;span class=&#34;nb&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;f7&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;k&#34;&gt;call&lt;/span&gt; ToggleColorscheme&lt;span class=&#34;p&#34;&gt;()&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Lo que hace esta última función es comprobar el colorscheme que estamos usando,
+y dependiendo de cuál sea, aplica uno u otro. Yo actualmente utilizo sólo dos:
+Molokai (el &lt;a href=&#34;https://bitbucket.org/sjl/dotfiles/src/63c73a196ade1b128464dad2a0595c6ecc884c21/vim/colors/molokai.vim?at=default&#34;&gt;fork&lt;/a&gt;
+de Steve Losh) y Solarized (de Ethan&amp;nbsp;Schoonover).&lt;/p&gt;
+&lt;h2 id=&#34;plugins&#34;&gt;Plugins&lt;/h2&gt;
+&lt;p&gt;El editor Vim es excelente, no por Vim en sí –que también– sino por la gran
+comunidad de desarrolladores de plugins que hay. Es fascinante que aunque una
+funcionalidad no esté listada en
+&lt;a href=&#34;http://www.vim.org/scripts/index.php&#34;&gt;Vim Scripts&lt;/a&gt; siempre puedes encontrar algo
+parecido a lo que buscas buceando en los dotfiles de algún programador que&amp;nbsp;conozcas.&lt;/p&gt;
+&lt;p&gt;Algunos de los plugins que más utilizo son los&amp;nbsp;siguientes:&lt;/p&gt;
+&lt;h3 id=&#34;nerdtree&#34;&gt;&lt;a href=&#34;https://github.com/scrooloose/nerdtree&#34;&gt;NERDTree&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Un gran plugin para manejo del sistema de archivos desde Vim. Permite mostrar
+un árbol de directorios desde el el punto del sistema de archivos en que nos
+encontremos en Vim &lt;code&gt;:pwd&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Yo lo tengo mapeado para que alterne entre mostrar y ocultar con &lt;F2&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;map &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;F2&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :NERDTreeToggle&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;caps&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Aparte de para mostrar el árbol de directorios, es muy útil para crear, borrar,
+copiar y mover archivos. Esto lo podemos hacer pulsando &lt;code&gt;m&lt;/code&gt; en modo normal
+encima del archivo que queramos, lo cual mostrará un menú con las opciones de
+copiar, mover, crear, borrar, mostrar en&amp;nbsp;Finder&amp;#8230;&lt;/p&gt;
+&lt;h3 id=&#34;ctr-p&#34;&gt;&lt;a href=&#34;https://github.com/kien/ctrlp.vim&#34;&gt;Ctr-p&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Es un plugin que aporta la funcionalidad de fuzzy file search, como la que tiene
+Textmate. Surgió como alternativa a Command-t, que está escrito en Ruby, por
+lo que necesita que Vim esté compilado con soporte para Ruby, sin embargo ctrl-p
+está escrito entero en&amp;nbsp;Vimscript.&lt;/p&gt;
+&lt;p&gt;Es bastante sencillo de usar. Para sacar el menú, simplemente pulsamos &lt;code&gt;&amp;lt;C-p&amp;gt;&lt;/code&gt;,
+después simplemente empezamos a escribir y nos muestra archivos dentro del &lt;span class=&#34;caps&#34;&gt;CWD&lt;/span&gt;
+que contienen las letras que vamos escribiendo. Simplemente decir que hace falta
+refrescarlo cada vez que creamos/borramos/movemos archivos. Ésto lo hacemos con
+&lt;code&gt;&amp;lt;F5&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;tagbar&#34;&gt;&lt;a href=&#34;https://github.com/majutsushi/tagbar&#34;&gt;Tagbar&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Un plugin bastante útil para programar. Muestra un sidebar a la derecha de la
+pantalla en la que aparecen los elementos generados por ctags para el archivo
+actual. Ésta sidebar es navegable, por lo que podemos seleccionar cualquiera de
+los elementos que nos muestra y darle a enter y nos lleva a el en el buffer. Muy&amp;nbsp;cómodo.&lt;/p&gt;
+&lt;h3 id=&#34;gundo&#34;&gt;&lt;a href=&#34;https://github.com/sjl/gundo.vim&#34;&gt;Gundo&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Plugin muy útil que nos muestra el historial de undo en un sidebar. También es
+navegable, por lo que podemos seleccionar un estado de los que aparecen y al
+darle a enter, volverá el fichero al estado en que se encontraba en ese momento.
+Super bueno para encontrar y resolver&amp;nbsp;bugs.&lt;/p&gt;
+&lt;h2 id=&#34;workflow&#34;&gt;Workflow&lt;/h2&gt;
+&lt;p&gt;Últimamente utilizo Git para el control de versiones. Para controlarlo utilizo
+la línea de comandos. He probado Fugitive, el plugin de Git para Vim, creado por
+&lt;a href=&#34;http://tpo.pe&#34;&gt;Tim Pope&lt;/a&gt;, y me parece muy cómodo, pero no me llego a
+acostumbrar. El emulador de terminal que uso es iTerm2. Es bastante potente
+y tiene muy buena integración con&amp;nbsp;Tmux.&lt;/p&gt;
+&lt;p&gt;Como navegador, para trabajar uso Firefox, por Pentadactyl. Lo malo es que la
+última version de Firefox con la que funciona Pentadactyl es &lt;span class=&#34;caps&#34;&gt;FF14&lt;/span&gt;, es decir,
+hace 7 versiones. Estoy considerando pasarme otra vez a&amp;nbsp;Chrome.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Hola Hyde!</title>
             <author><name>José Luis García</name></author>

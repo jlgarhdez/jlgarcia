@@ -1,0 +1,211 @@
+---
+title: Sobre cómo uso Vim
+created: !!timestamp '2013-05-07 18:00:00'
+---
+
+Quiero contar cómo utilizo Vim yo en el día a día. No sólo lo uso para escribir
+código sino para cualquier tarea de edición de texto, como contaba en mi
+anterior artículo.
+
+He de dejar claro que no soy para nada un gurú de Vim. De hecho tengo muchas
+manías a la hora de editar que pondrían de los nervios a más de uno. Por
+ejemplo, no suelo usar `$` para ir al final de la línea, sino que hago `<esc>A.`
+Esto lo hago porque tengo remapeada la tecla Bloc Mayus –a mi entender, la tecla
+más inutil del teclado– a `<esc>`, lo que vuelve realmente cómodo hacer `<esc>A.`
+
+Otra de las cosas que no uso de Vim es la navegación entre bloques con [ y ]. No
+lo uso básicamente, porque en el layout español del teclado Qwerty es bastante
+incómodo acceder a esas teclas.
+
+Índice
+------
+
+[TOC]
+
+Configuración
+-------------
+
+Aquí va una lista de mis _vimeros_ de referencia. A mí al menos me sirve
+bastante stalkear un poco a esta gente y ver cómo hacen las cosas con Vim.
+Aparte, algunos como [Steve Losh](http://www.youtube.com/watch?v=xZuy4gBghho)
+tienen videos hablando sobre su configuración de vimrc en Youtube.
+
+* [Steve Losh](http://github.com/sjl)
+* [Tim Pope](http://github.com/tpope)
+* [Martin Grenfel –A.K.A Scrooloose–](http://github.com/scrooloose)
+* [Shawn Biddle](http://github.com/shawncplus)
+* [Yehuda Katz](http://github.com/wycats)
+
+También dejo [mis dotfiles](http://github.com/jlgarhdez/vim) para que podáis
+verlas y consultar lo que queráis. Las tengo guardadas en un repositorio Git y
+los plugins están configurados por módulos de Git, de tal manera que, en caso de
+que se requiera actualizar cualquiera de ellos, puedo hacerlo con un simple:
+
+	git submodule update nombreDelModulo
+
+###Diferencias entre lenguajes y extensiones
+Aunque sé de gente que utiliza distintos archivos de configuración dependiendo
+del lenguaje que esté utilizando, no es la manera que tengo yo de trabajar.
+Como yo lo hago es con un solo archivo `.vimrc` que contiene ciertos autocommands
+que se ejecutan dependiendo del filetype, por ejemplo:
+
+{% syntax vim %}
+augroup ft_php
+    au!
+    nnoremap <leader>P :!open http://www.php.net/<cword><cr>
+    au FileType php setlocal foldmethod=syntax
+    au FileType php setlocal expandtab
+    au FileType php setlocal tabstop=4
+    au FileType php setlocal keywordprg=pman
+    au FileType php inoremap <C-o> :set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>i
+augroup END
+{% endsyntax %}
+
+¿Qué hace este grupo de autocommands? pues lo primero, indica que los fold sean
+por sintáxis, no por indentación ni por un marcador. En las siguientes dos
+líneas, obligamos a que se cambien las tabulaciones por cuatro espacios
+(Estándar de Symfony). En la penúltima, hacemos que cuando se quiera consultar
+una keyword de php se use pman, una utilidad para consultar el manual de php
+desde la línea de comandos. Por último, incluyo el atajo de teclado <C-o> para
+que se inserte el PHPdoc.
+
+###Funciones
+En mi archivo de configuración tengo varias funciones. Las dejo en el archivo de
+configuración mientras son los suficientemente pequeñas como para no molestar.
+Ha habido otras veces que he creado plugins a partir de funciones, porque, por
+su naturaleza, no debían estar en el .vimrc.
+
+Estas funciones son relativamente interesantes, sobre todo si programais PHP. La
+primera de ellas, la creé a partir de un video que del gran
+[@moisesgallego](http://twitter.com/moisesgallego) hablando sobre Emacs. En el
+video, muestra un poco qué es Emacs Lisp creando una función realmente útil para
+PHP. La función lo que hace es pedirte el nombre de una variable y escribir un
+var_dump() de la variable dentro de dos etiquetas `<pre>` y mostrando también
+el archivo en que se encuentra el `var_dump()`, para que no se nos olviden trazas.
+Aquí tenéis mi implementación de `Jeanclaude var_dump()` en Vimscript:
+
+{% syntax vim %}
+function! JeanClaude()
+
+    let path = "echo 'var_dump() en " . @% . "';"
+    let openpre = "echo '<pre>';"
+    let closepre = "echo '</pre>';"
+    let nombre = inputdialog("nombre de la variable: ")
+
+    exec "normal! O" . path  . "\n" . openpre . "\nvar_dump($" . nombre . ");\n" . closepre
+endfunction
+
+command! -bar -narg=0 Jeanclaude call JeanClaude()
+{% endsyntax %}
+
+Al final, después de la función, creo el comando `:Jeanclaude` para ejecutar la
+función de manera más cómoda que `:call JeanClaude()`
+
+Otra de las funciones que tengo en mi vimrc es un asistente para crear getters
+y setters de un atributo de clase cuando tienes el cursor en esa linea. Aviso:
+no es el código más bonito que he escrito en mi vida, no es PSR compliant,
+y mil cosas más... pero funciona.
+
+{% syntax vim %}
+function! s:CreateGetterSetter()
+    let line = getline(".")
+
+    let getterStart = "()\n{\nreturn $this->"
+    let setterStart = "($nombre)\n{\nthis->"
+
+    let nombreDelMetodo = substitute(substitute(substitute(substitute(substitute(substitute(line, "[\t*]public \\$", "", ""), "[\t*]protected ", "", ""), "[\t*]private ", "", ""), "\\$", "", ""), ";", "", ""), "[=.*]", "", "")
+    let nombreDelMetodo = split(nombreDelMetodo)[0]
+
+    exec "normal! opublic function get_" . nombreDelMetodo . getterStart . nombreDelMetodo . ";\n}\n"
+    exec "normal! opublic function set_" . nombreDelMetodo . setterStart . nombreDelMetodo  . " = $nombre;\n}\n"
+
+endfunction
+
+command! Gs call s:CreateGetterSetter()
+
+nnoremap <leader>gs :Gs<cr>
+{% endsyntax %}
+
+Por último, para ilustrar un poco más las funciones que utilizo, os enseño una
+que acabo de crear para cambiar de colorscheme rápidamente:
+
+{% syntax vim %}
+function! ToggleColorscheme()
+    if (g:colors_name == "solarized")
+        colorscheme Molokai
+    else
+        colorscheme solarized
+        set background=light
+    endif
+endfunction
+nnoremap <f7> :call ToggleColorscheme()<cr>
+{% endsyntax %}
+
+Lo que hace esta última función es comprobar el colorscheme que estamos usando,
+y dependiendo de cuál sea, aplica uno u otro. Yo actualmente utilizo sólo dos:
+Molokai (el [fork](https://bitbucket.org/sjl/dotfiles/src/63c73a196ade1b128464dad2a0595c6ecc884c21/vim/colors/molokai.vim?at=default)
+de Steve Losh) y Solarized (de Ethan Schoonover).
+
+Plugins
+-------
+El editor Vim es excelente, no por Vim en sí –que también– sino por la gran
+comunidad de desarrolladores de plugins que hay. Es fascinante que aunque una
+funcionalidad no esté listada en
+[Vim Scripts](http://www.vim.org/scripts/index.php) siempre puedes encontrar algo
+parecido a lo que buscas buceando en los dotfiles de algún programador que
+conozcas.
+
+Algunos de los plugins que más utilizo son los siguientes:
+
+### [NERDTree](https://github.com/scrooloose/nerdtree)
+Un gran plugin para manejo del sistema de archivos desde Vim. Permite mostrar
+un árbol de directorios desde el el punto del sistema de archivos en que nos
+encontremos en Vim `:pwd`.
+
+Yo lo tengo mapeado para que alterne entre mostrar y ocultar con <F2>:
+
+{% syntax vim %}
+map <F2> :NERDTreeToggle<CR>
+{% endsyntax %}
+
+Aparte de para mostrar el árbol de directorios, es muy útil para crear, borrar,
+copiar y mover archivos. Esto lo podemos hacer pulsando `m` en modo normal
+encima del archivo que queramos, lo cual mostrará un menú con las opciones de
+copiar, mover, crear, borrar, mostrar en Finder...
+
+### [Ctr-p](https://github.com/kien/ctrlp.vim)
+Es un plugin que aporta la funcionalidad de fuzzy file search, como la que tiene
+Textmate. Surgió como alternativa a Command-t, que está escrito en Ruby, por
+lo que necesita que Vim esté compilado con soporte para Ruby, sin embargo ctrl-p
+está escrito entero en Vimscript.
+
+Es bastante sencillo de usar. Para sacar el menú, simplemente pulsamos `<C-p>`,
+después simplemente empezamos a escribir y nos muestra archivos dentro del CWD
+que contienen las letras que vamos escribiendo. Simplemente decir que hace falta
+refrescarlo cada vez que creamos/borramos/movemos archivos. Ésto lo hacemos con
+`<F5>`.
+
+### [Tagbar](https://github.com/majutsushi/tagbar)
+Un plugin bastante útil para programar. Muestra un sidebar a la derecha de la
+pantalla en la que aparecen los elementos generados por ctags para el archivo
+actual. Ésta sidebar es navegable, por lo que podemos seleccionar cualquiera de
+los elementos que nos muestra y darle a enter y nos lleva a el en el buffer. Muy
+cómodo.
+
+### [Gundo](https://github.com/sjl/gundo.vim)
+Plugin muy útil que nos muestra el historial de undo en un sidebar. También es
+navegable, por lo que podemos seleccionar un estado de los que aparecen y al
+darle a enter, volverá el fichero al estado en que se encontraba en ese momento.
+Super bueno para encontrar y resolver bugs.
+
+Workflow
+--------
+Últimamente utilizo Git para el control de versiones. Para controlarlo utilizo
+la línea de comandos. He probado Fugitive, el plugin de Git para Vim, creado por
+[Tim Pope](http://tpo.pe), y me parece muy cómodo, pero no me llego a
+acostumbrar. El emulador de terminal que uso es iTerm2. Es bastante potente
+y tiene muy buena integración con Tmux.
+
+Como navegador, para trabajar uso Firefox, por Pentadactyl. Lo malo es que la
+última version de Firefox con la que funciona Pentadactyl es FF14, es decir,
+hace 7 versiones. Estoy considerando pasarme otra vez a Chrome.

@@ -7,6 +7,8 @@
 !!python/unicode '2013/04/hola-hyde.markdown': [blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode '2013/04/productividad-sin-raton.html': [blog.j2, macros.j2, base.j2,
   analytics.j2]
+!!python/unicode '2013/05/como-uso-vim.html': [blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode '2013/05/como-uso-vim.md': [blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'about.html': [blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'about.md': [blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'atom.xml': [atom.j2, macros.j2]

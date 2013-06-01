@@ -7,17 +7,17 @@
         <link href="/"/>
     
         
-    <updated>2013-06-01T22:14:19Z</updated>
+    <updated>2013-06-02T00:06:08Z</updated>
 
     <id>/atom.xml/</id>
 
             <entry>
             <title type="html">Sobre cómo uso Vim</title>
             <author><name>José Luis García</name></author>
-            <link href="/2013/05/como-uso-vim.html"/>
+            <link href="/blog/2013/05/como-uso-vim.html"/>
             <updated>2013-05-07T18:00:00Z</updated>
             <published>2013-05-07T18:00:00Z</published>
-            <id>/2013/05/como-uso-vim.html</id>
+            <id>/blog/2013/05/como-uso-vim.html</id>
             
             <content type="html">
                                 &lt;p&gt;Quiero contar cómo utilizo Vim yo en el día a día. No sólo lo uso para escribir
@@ -169,23 +169,22 @@ hace 7 versiones. Estoy considerando pasarme otra vez a&amp;nbsp;Chrome.&lt;/p&g
             <entry>
             <title type="html">Hola Hyde!</title>
             <author><name>José Luis García</name></author>
-            <link href="/2013/04/hola-hyde.html"/>
+            <link href="/blog/2013/04/hola-hyde.html"/>
             <updated>2013-04-20T10:00:00Z</updated>
             <published>2013-04-20T10:00:00Z</published>
-            <id>/2013/04/hola-hyde.html</id>
+            <id>/blog/2013/04/hola-hyde.html</id>
             
             <content type="html">
                                 &lt;p&gt;Bueno, pues me cambio a &lt;a href=&#34;http://ringce.com/hyde&#34;&gt;Hyde&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;No es por nada, sólamente que aún no piloto Python lo suficiente para hacer lo
-que me gustaría con &lt;a href=&#34;http://djangoproject.org&#34;&gt;Django&lt;/a&gt;, y con Hyde puedo&amp;nbsp;hacerlo.&lt;/p&gt;
+&lt;p&gt;No es por nada, sólamente que me apetecía&amp;nbsp;probarlo.&lt;/p&gt;
 &lt;p&gt;Hyde es lo que llaman un &lt;em&gt;static site generator&lt;/em&gt;, esto es un software que se
 encarga de generar archivos &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; a partir de archivos
-&lt;a href=&#34;http://daringfireball.net/projects/markdown&#34;&gt;Markdown&lt;/a&gt;, Jinja2,&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;RST&lt;/span&gt;&amp;#8230;&lt;/p&gt;
+&lt;a href=&#34;http://daringfireball.net/projects/markdown&#34;&gt;Markdown&lt;/a&gt;, Jinja2, &lt;span class=&#34;caps&#34;&gt;RST&lt;/span&gt;,&amp;nbsp;Tex&amp;#8230;&lt;/p&gt;
 &lt;p&gt;Con ésto lo que consigo básicamente es poder gestionar toda la página desde Git,
 sin tener que preocuparme de bases de datos, backups etc. Tengo siempre mi
 backup en Github y me&amp;nbsp;olvido.&lt;/p&gt;
 &lt;p&gt;Esto de pasarse a sitios estáticos se puso de moda entre los blogueros más pro
-para poder soportar lo que denominan &lt;em&gt;efecto Reddit&lt;/em&gt;, es decir, que alguien
+para poder soportar lo que denominan &lt;em&gt;efecto Reddit/Slashdot/&lt;span class=&#34;caps&#34;&gt;HN&lt;/span&gt;&lt;/em&gt;, es decir, que alguien
 ponga un enlace a un artículo de tu blog en una de estas plataformas y recibir
 tráfico masivo en cuestion de minutos. Imaginad lo que puede ser para un
 servidor chungo (Yo por ejemplo estoy pagando 15$ al mes por un &lt;span class=&#34;caps&#34;&gt;VPS&lt;/span&gt;.) que un
@@ -196,19 +195,26 @@ ya que en el anterior ni había parado a hacerlo, era un Bootstrap&amp;nbsp;bás
             <entry>
             <title type="html">Cómo no usar el ratón</title>
             <author><name>José Luis García</name></author>
-            <link href="/2013/04/como-no-usar-el-raton.html"/>
+            <link href="/blog/2013/04/como-no-usar-el-raton.html"/>
             <updated>2013-04-14T10:00:00Z</updated>
             <published>2013-04-14T10:00:00Z</published>
-            <id>/2013/04/como-no-usar-el-raton.html</id>
+            <id>/blog/2013/04/como-no-usar-el-raton.html</id>
             
             <content type="html">
                                 &lt;p&gt;Me he vuelto un poco talibán con el tema de la productividad y el no sacar 
 las manos del&amp;nbsp;teclado.&lt;/p&gt;
 
-&lt;h3&gt;Herramientas&lt;/h3&gt;
+&lt;h2&gt;Herramientas&lt;/h2&gt;
 
-&lt;p&gt;&lt;p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&#34;http://www.alfredapp.com&#34;&gt;Alfred&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;http://www.mozilla.org&#34;&gt;Firefox&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;http://5digits.org/pentadactyl/&#34;&gt;Pentadactyl&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/p&gt;&lt;/p&gt;
-&lt;h3&gt;¿Cómo?&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt; 
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;http://www.alfredapp.com&#34;&gt;Alfred&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&#34;http://www.mozilla.org&#34;&gt;Firefox&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&#34;http://5digits.org/pentadactyl/&#34;&gt;Pentadactyl&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt;&lt;/li&gt; 
+    &lt;/ul&gt; 
+&lt;/p&gt;&lt;/p&gt;
+&lt;h2&gt;¿Cómo?&lt;/h2&gt;
 
 &lt;p&gt;Bien, el tema es que si no tienes que mover las manos hasta el ratón a cada
 rato, se gana bastante tiempo. ¿Y qué más me da eso? Pues que así tienes más
@@ -239,21 +245,21 @@ tiempo para procrastinar, 4chan se nutre de&amp;nbsp;nosotros&amp;#8230;&lt;/p&g
 
 &lt;/ul&gt;
 
-&lt;h3&gt;¿Por qué&amp;nbsp;Alfred?&lt;/h3&gt;
+&lt;h2&gt;¿Por qué&amp;nbsp;Alfred?&lt;/h2&gt;
 
 &lt;p&gt;Bueno, sé que hay otros lanzadores de aplicaciones en el mercado, por ejemplo
 Quicksilver. Si he de ser sincero, no lo he probado, me lo apunto ya que me lo
 preguntas&amp;#8230;&amp;nbsp;:)&lt;/p&gt;
 
-&lt;h3&gt;¿Por qué&amp;nbsp;Vim?&lt;/h3&gt;
+&lt;h2&gt;¿Por qué&amp;nbsp;Vim?&lt;/h2&gt;
 
 &lt;p&gt;Bitch,&amp;nbsp;please&amp;#8230;&lt;/p&gt;
 
-&lt;h3&gt;¿Por qué&amp;nbsp;Firefox?&lt;/h3&gt;
+&lt;h2&gt;¿Por qué&amp;nbsp;Firefox?&lt;/h2&gt;
 
 &lt;p&gt;Por&amp;nbsp;Pentadactyl.&lt;/p&gt;
 
-&lt;h3&gt;¿Por qué&amp;nbsp;Pentadactyl?&lt;/h3&gt;
+&lt;h2&gt;¿Por qué&amp;nbsp;Pentadactyl?&lt;/h2&gt;
 
 &lt;p&gt;Bueno, se es más rápido. Únicamente tienes que mover tus manos entre las
 teclas, lo que ahorra mucho tiempo. Te puedes crear macros para hacer acciones&amp;nbsp;concretas.&lt;/p&gt;
@@ -266,10 +272,10 @@ enlaces, que uso el&amp;nbsp;ratón&lt;/p&gt;            </content>
             <entry>
             <title type="html">Nginx, Django y Green Unicorn, magia negra</title>
             <author><name>José Luis García</name></author>
-            <link href="/2013/02/nginx-django-gunicorn.html"/>
+            <link href="/blog/2013/02/nginx-django-gunicorn.html"/>
             <updated>2013-02-10T10:00:00Z</updated>
             <published>2013-02-10T10:00:00Z</published>
-            <id>/2013/02/nginx-django-gunicorn.html</id>
+            <id>/blog/2013/02/nginx-django-gunicorn.html</id>
             
             <content type="html">
                                 &lt;p&gt;Para estrenar el blog, vamos con un buen ladrillo. Vamos a hablar sobre cómo 
@@ -349,10 +355,10 @@ Espero haber dado suficiente coñazo&amp;#8230; Nos&amp;nbsp;vemos!
             <entry>
             <title type="html">Volviendo a Vim. No soy el primero que dice esto...</title>
             <author><name>José Luis García</name></author>
-            <link href="/2013/02/volviendo-a-vim.html"/>
+            <link href="/blog/2013/02/volviendo-a-vim.html"/>
             <updated>2013-02-01T10:00:00Z</updated>
             <published>2013-02-01T10:00:00Z</published>
-            <id>/2013/02/volviendo-a-vim.html</id>
+            <id>/blog/2013/02/volviendo-a-vim.html</id>
             
             <content type="html">
                                 &lt;p&gt;En este post quiero hablaros de Vim, de por qué dejé de usarlo y de por qué

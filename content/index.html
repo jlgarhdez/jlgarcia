@@ -1,4 +1,19 @@
 ---
-extends: listing.j2
+extends: base.j2
 listable: false
 ---
+{% block main %}
+<article class="splash">
+<p>Hola, soy José Luis García, un programador de Madrid, que actualmente está en
+Tampere, Finlandia y habla de sí mismo en tercera persona.</p>
+
+<p>Uso esta página principalmente como un <a href="blog">blog</a> en español
+sobre temas relativos al desarrollo. Aparte, tengo un 
+<a href="http://garhdez.wordpress.com">blog en inglés</a> sobre cosas menos 
+técnicas, que intento manterner relativamente actualizado también.</p>
+
+<p>Si quieres contarme algo, usa el 
+<a href="mailto:jl.garhdez@gmail.com">email</a>
+o <a href="http://twitter.com/jlgarhdez">Twitter</a></p>
+</article>
+{% endblock %}

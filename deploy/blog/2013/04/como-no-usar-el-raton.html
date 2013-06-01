@@ -22,7 +22,7 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>Nginx, Django y Green Unicorn, magia negra</title>
+  <title>Cómo no usar el ratón</title>
   <meta name="description" content="">
   <meta name="author" content="José Luis García">
 
@@ -58,99 +58,108 @@
 
 </script>
 </head>
-<body id="nginx-django-gunicorn">
+<body id="como-no-usar-el-raton">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
           
 		  <h1 class="logo"><a href="http://jlgarcia.me">jl<span class="highlight">·</span>garcia</a></h1>
 
-                              
+                              <nav class=main_nav>
+    <ul>
+                <li>
+            <a title="Blog"
+                class="button white"
+                href="/blog">
+                Blog
+            </a>
+        </li>        <li>
+            <a title="Feed"
+                class="button white feed"
+                href="/atom.xml">
+                Feed
+            </a>
+        </li>    </ul>
+</nav>
                     </header>
           <section class="content">
           <article class="post">
 <h1 class="title">
-    <a href="/2013/02/nginx-django-gunicorn.html">
-        Nginx, Django y Green Unicorn, magia negra
+    <a href="/blog/2013/04/como-no-usar-el-raton.html">
+        Cómo no usar el ratón
     </a>
 </h1>
-<time datetime="2013-02-10">
-    Posted: Sun, 10 Feb 2013
+<time datetime="2013-04-14">
+    Posted: Sun, 14 Apr 2013
 </time>
 
-<p>Para estrenar el blog, vamos con un buen ladrillo. Vamos a hablar sobre cómo 
-está montada ésta&nbsp;web.</p>
+<p>Me he vuelto un poco talibán con el tema de la productividad y el no sacar 
+las manos del&nbsp;teclado.</p>
 
-<h3>Intro</h3>
+<h2>Herramientas</h2>
 
-<p>Ésta web la he creado principalmente, para aprender. En ella uso Django, Ngnix,
-    Gunicorn&#8230; Os lo muestro con una imagen para que quede más&nbsp;claro. </p>
+<p><p> 
+    <ul>
+        <li><a href="http://www.alfredapp.com">Alfred</a></li> 
+        <li><a href="http://www.mozilla.org">Firefox</a></li> 
+        <li><a href="http://5digits.org/pentadactyl/">Pentadactyl</a></li> 
+        <li><a href="http://www.vim.org">Vim</a></li> 
+    </ul> 
+</p></p>
+<h2>¿Cómo?</h2>
 
-<p><img src="https://lh5.googleusercontent.com/-0UP-0ib7FOs/UK1IVdhOd_I/AAAAAAAAASk/F9Xt-OPjznE/s512/jlgarcia.me.jpg"></p>
+<p>Bien, el tema es que si no tienes que mover las manos hasta el ratón a cada
+rato, se gana bastante tiempo. ¿Y qué más me da eso? Pues que así tienes más
+tiempo para procrastinar, 4chan se nutre de&nbsp;nosotros&#8230;</p>
 
-<h3>Nginx</h3>
+<p>Básicamente mi workflow es: <ul>
 
-<p>En este caso, Nginx lo estoy usando como proxy sólamente. Uso Nginx en vez de 
-Apache, Lighttp o FastCGI porque&#8230; bueno&#8230; es lo más jodido trendy, todo el 
-mundo quiere a Nginx. No, ahora en serio, lo uso porque Apache lo he usado en 
-ocasiones anteriores, y lo que necesito es un proxy que redirija el tráfico que 
-vaya hacia <a href="jlgarcia.me/blog">jlgarcia.me/blog</a>  a un puerto en el que 
-corre Green&nbsp;Unicorn.</p>
+    <li>Todo el texto que tengo que escribir lo escribo en Vim. Incluso
+    responder emails, escribir éste post&#8230; todo. Es más rápido escribirlo en
+    Vim, copiar y pegar que desaprender todos mis tricks para escribir como el
+    resto de los&nbsp;mortales.</li>
 
-<p>
-La configuración que uso en Nginx es la siguiente:
-<pre>server {
-     server_name jlgarcia.me;
-     access_log /var/log/nginx/nginx_access.log;
-     location / {
-          alias /var/www/;
-     }
-     location /blog {
-          proxy_pass    http://127.0.0.1:1337/blog;
-     }
-     location /static {
-          alias /var/www/static/;
-     }
-}
-</pre>
-</p><p>
-Lo que hacemos en esta configuración es:
-<ul>
-     <li>Servir el dominio&nbsp;jlgarcia.me</li>
-     <li>Enviar las peticiones a <a href="http://jlgarcia.me">jlgarcia.me</a> a 
-     la carpeta raíz de mi&nbsp;servidor</li>
-     <li>Pasar las peticiones al <a href="http://jlgarcia.me/blog">jlgarcia.me/blog</a> 
-     al servidor que está corriendo en el puerto 1337 en nuestra máquina mediante 
-     Green&nbsp;Unicorn</li>
-     <li>Servir el contenido estático (<span class="caps">CSS</span>, Javascript, imágenes&#8230;) de nuestra 
-     carpeta&nbsp;Static</li>
+    <li>Como navegador utilizo Firefox. No por el navegador en sí, de hecho me
+    parece que Chrome es mejor, pero Chrome no tiene Pentadactyl&#8230; Tiene algo
+    parecido llamado Vimium, pero no es lo mismo ni de&nbsp;cerca.</li>
+
+    <li>Pentadactyl para manejar Firefox. ¿Cómo he podido vivir sin tí? es un 
+    addon para Firefox que permite manejar el navegador con controles parecidos 
+    a Vim. Aparte, tiene unos cuantos plugins interesantes como el de firebug, 
+    para manejar Firebug o el de jQuery, escrito por el mismo John Resig&#8230; 
+    Además con Pentadactyl tiene opcion de editar cualquier textarea en el 
+    editor que elijas&nbsp;(<span class="caps">VIM</span>!)</li>
+
+    <li>Para abrir aplicaciones nuevas y cambiar entre las que tengo abiertas,
+    uso Alfred. Es un lanzador de aplicaciones que se activa con un hotkey
+    y que, aparte de lanzar aplicaciones, también permite crearte tus propias 
+    busquedas. Yo tengo por ejemplo un atajo para buscar en la <span class="caps">API</span> de&nbsp;<span class="caps">PHP</span>.</li>
+
 </ul>
-</p>
-<h3>Sobre Green&nbsp;Unicorn</h3> 
-<p>
- Con Gunicorn, lo que hacemos es servir en sí el contenido de Django. Es bastante 
- fácil de usar y configuración requiere cero. Lo que he hecesitado para que 
- funcione es instalarlo:
- <pre>sudo pip install gunicorn</pre>
- Después añadirlo a las installed apps de Django en la configuración y, por 
- último, parra arrancar el servidor uso la siguiente instrucción:
- <pre>./manage.py run_gunicorn -b 127.0.0.1:1337 --daemon</pre>
- Ésto lo que hace es correr el servidor en modo &#8220;daemon&#8221; en el puerto 1337. Rly&nbsp;Ez!
 
-</p>
+<h2>¿Por qué&nbsp;Alfred?</h2>
 
-<h3>Bootstrap</h3>
+<p>Bueno, sé que hay otros lanzadores de aplicaciones en el mercado, por ejemplo
+Quicksilver. Si he de ser sincero, no lo he probado, me lo apunto ya que me lo
+preguntas&#8230;&nbsp;:)</p>
 
-<p>
-Aceptémoslo, el frontend para un retrasado visual —como yo— es bastante jodido. 
-Lo que quería para ésta web era un diseño que no necesitara imágenes principalmente 
-—de hecho no tengo ninguna hecha por mí en todo el diseño— Además tenemos el que 
-es completamente responsive, que es un estándar y que es bastante&nbsp;bonito. 
-</p>
+<h2>¿Por qué&nbsp;Vim?</h2>
 
-<p>
-Espero haber dado suficiente coñazo&#8230; Nos&nbsp;vemos!
-</p></article>
+<p>Bitch,&nbsp;please&#8230;</p>
+
+<h2>¿Por qué&nbsp;Firefox?</h2>
+
+<p>Por&nbsp;Pentadactyl.</p>
+
+<h2>¿Por qué&nbsp;Pentadactyl?</h2>
+
+<p>Bueno, se es más rápido. Únicamente tienes que mover tus manos entre las
+teclas, lo que ahorra mucho tiempo. Te puedes crear macros para hacer acciones&nbsp;concretas.</p>
+
+<p>De todos  modos tengo que decir que no todo el tiempo estoy solamente con el 
+teclado. Hay algunos momentos, cuando estoy leyendo un post largo por ejemplo, o
+estoy en alguna página que necesita de más interaccion que hacer click en
+enlaces, que uso el&nbsp;ratón</p></article>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -181,6 +190,18 @@ Espero haber dado suficiente coñazo&#8230; Nos&nbsp;vemos!
     <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
   <![endif]-->
 
-      
+    <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
+       change the UA-XXXXX-X to be your site's ID -->
+<script>
+    var _gaq = [['_setAccount', ''], ['_trackPageview']];
+    (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+    })(document, 'script');
+</script>
+  
   </body>
 </html>

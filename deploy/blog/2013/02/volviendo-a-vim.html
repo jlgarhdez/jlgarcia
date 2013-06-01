@@ -22,7 +22,7 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title></title>
+  <title>Volviendo a Vim. No soy el primero que dice esto...</title>
   <meta name="description" content="">
   <meta name="author" content="José Luis García">
 
@@ -58,7 +58,7 @@
 
 </script>
 </head>
-<body id=".hyde_deps">
+<body id="volviendo-a-vim">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
@@ -85,15 +85,80 @@
           <section class="content">
           <article class="post">
 <h1 class="title">
-    <a href="/.hyde_deps">
-        
+    <a href="/blog/2013/02/volviendo-a-vim.html">
+        Volviendo a Vim. No soy el primero que dice esto...
     </a>
 </h1>
-<time datetime="2010-01-01">
-    Posted: Fri, 01 Jan 2010
+<time datetime="2013-02-01">
+    Posted: Fri, 01 Feb 2013
 </time>
 
-<p>{}</p></article>
+<p>En este post quiero hablaros de Vim, de por qué dejé de usarlo y de por qué
+vuelvo ahora a él. Bueno, antes de nada os dejo el enlace a mi 
+<a href="https://github.com/jlgarhdez/vim">carpeta de configuración de Vim</a>&nbsp;.</p>
+
+<h3>Por qué lo&nbsp;dejé</h3>
+
+<p>Pues ahora mismo no recuerdo bien. Creo que lo dejé porque descubrí 
+<a href="http://www.jetbrains.com/phpstorm/">Phpstorm</a>. Bueno, yo desarrollo en <span class="caps">PHP</span>, y 
+editores buenos para php hay pocos. Es un <span class="caps">IDE</span> bastante potente hecho por los amigos 
+de Jetbrains. Probablemente conozcáis IntelliJ <span class="caps">IDEA</span>, para Java. Lo de los <span class="caps">IDE</span>´s al 
+principio me flipó bastante -Los descubrí, yo creo con Eclipse para Java-. Luego,
+cuando empiezan a comer memoria como Zombies hambrientos, ya harta más. Por ésto 
+me pasé a PhpStorm, es potente, rápido -comparado con Eclipse- , el autocompletado
+no está&nbsp;mal&#8230;</p>
+
+<p>Tiene muchas cosas buenas PhpStorm&#8230; Pero también muchas malas. Es pesado, lento
+&#8212; contra Vim/ Sublime/ Textmate&#8230;&#8212;, de pago, y sobre todo, poco&nbsp;configurable.</p>
+
+<p>Después de PhpStorm estuve un tiempo con Sublime Text 2. Aparte de los cursores
+múltiples que, aceptémoslo, es una killer feature, no tiene nada para mí. Cosa[s]
+buena[s] de Sublime Text para mí, los cursores múltiples. Lo &#8220;malo&#8221; es que es 
+suficientemente buena como para cambiarse. Agiliza muchísimo el tratamiento de 
+textos grandes. Pero para programar en sí, no aporta&nbsp;nada.</p>
+
+<p>Cosas malas que veo de Sublime: para ser un editor &#8220;ligero&#8221; es <strong>pesado</strong>. En una
+ocasión se me ocurrió abrir un backup de 100M para hacer unas modificaciones y 
+me tocó tirar de <em>forceclose</em>. Y, sobre todo, no es software&nbsp;libre.</p>
+
+<h3>Por qué&nbsp;vuelvo</h3>
+
+<p>Vuelvo a Vim por muchas razones, pero en el top&nbsp;están:</p>
+
+<ol>
+<li>
+<p><strong>El poder mantener mi configuración entre máquinas.</strong>
+Bueno, ésto no es un problema para un editor no configurable, pero para otro que
+sí lo sea, lo&nbsp;es.</p>
+
+<p>Como toda la configuración va sobre archivos de texto, es totalmente versionable.
+Yo tengo mi carpeta de configuración en Github. Por lo que si quiero tener mi Vim
+en cualquier otra máquina, sólamente necesito tres&nbsp;comandos:</p>
+
+<pre><code>cd ~/
+git clone https://github.com/jlgarhdez/vim.git .vim
+ln -s .vim/vimrc .vimrc
+</code></pre>
+</li>
+<li><p><strong>Se puede customizar hasta la médula.</strong>
+Todo lo que se te ocurra existe en vim. De hecho, todo lo que existe en Unix, existe
+en&nbsp;Vim.</p></li>
+<li><p><strong>Te vuelve RÁ<span class="caps">PIDO</span>.</strong>
+Todos los gurús de Vim dicen lo mismo para cuando empiezas. Que desmapees las
+flechas del teclado y uses hjkl para&nbsp;moverte.</p>
+<p>Al principio cuando usaba Vim usaba las teclas de dirección para moverme pero, 
+aunque parezca que no, ralentizan. Una vez sabes cómo, eres más rápido con las 
+teclas especiales de Vim que con las teclas de&nbsp;dirección.</p>
+</li>
+<li><strong>Integración total con <span class="caps">UNIX</span>.</strong>
+Cualquier herramienta de <span class="caps">CLI</span> que tengas instalada en el equipo es acesible desde
+Vim con&nbsp;:!nombreDelBinario.</li>
+</ol>
+
+<h3>Conclusión</h3>
+
+<p>Os aconsejaría a todos a probar Vim, aunque sea sólo como editor &#8220;ligero&#8221;, ese que
+usamos para editar los <span class="caps">TXT</span> o el&nbsp;/etc/hosts.</p></article>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">

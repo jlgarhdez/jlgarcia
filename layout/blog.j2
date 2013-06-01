@@ -2,11 +2,11 @@
 
 {% block main -%}
 <article class="post">
-<h2 class="title">
+<h1 class="title">
     <a href="{{ content_url(resource.url) }}">
         {{ resource.meta.title }}
     </a>
-</h2>
+</h1>
 <time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
     Posted: {{ resource.meta.created.strftime('%a, %d %b %Y') }}
 </time>

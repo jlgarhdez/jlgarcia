@@ -23,7 +23,15 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
+  <title>
+	{% block title %}
+		{% if resource.meta.title %}
+			jlgarcia | {{ resource.meta.title }}
+		{% else %}
+			jlgarcia
+		{% endif %}
+	{% endblock %}
+  </title>
   <meta name="description" content="{{ resource.meta.description }}">
   <meta name="author" content="{{ resource.meta.author }}">
 
@@ -47,9 +55,8 @@
   {% endblock css %}
 
   {% block headjs %}
-  <!-- All JavaScript at the bottom, except for Modernizr which
-        enables HTML5 elements & feature detects -->
-    <script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
   {% endblock headjs %}
   {% block endhead %}{% endblock endhead %}
   <script type="text/javascript">

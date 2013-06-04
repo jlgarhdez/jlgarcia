@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2013-06-02T00:06:08Z</updated>
+    <updated>2013-06-04T12:39:25Z</updated>
 
     <id>/atom.xml/</id>
 
@@ -20,151 +20,7 @@
             <id>/blog/2013/05/como-uso-vim.html</id>
             
             <content type="html">
-                                &lt;p&gt;Quiero contar cómo utilizo Vim yo en el día a día. No sólo lo uso para escribir
-código sino para cualquier tarea de edición de texto, como contaba en mi
-anterior&amp;nbsp;artículo.&lt;/p&gt;
-&lt;p&gt;He de dejar claro que no soy para nada un gurú de Vim. De hecho tengo muchas
-manías a la hora de editar que pondrían de los nervios a más de uno. Por
-ejemplo, no suelo usar &lt;code&gt;$&lt;/code&gt; para ir al final de la línea, sino que hago &lt;code&gt;&amp;lt;esc&amp;gt;A.&lt;/code&gt;
-Esto lo hago porque tengo remapeada la tecla Bloc Mayus –a mi entender, la tecla
-más inutil del teclado– a &lt;code&gt;&amp;lt;esc&amp;gt;&lt;/code&gt;, lo que vuelve realmente cómodo hacer &lt;code&gt;&amp;lt;esc&amp;gt;A.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Otra de las cosas que no uso de Vim es la navegación entre bloques con [ y ]. No
-lo uso básicamente, porque en el layout español del teclado Qwerty es bastante
-incómodo acceder a esas&amp;nbsp;teclas.&lt;/p&gt;
-&lt;h2 id=&#34;indice&#34;&gt;Índice&lt;/h2&gt;
-&lt;div class=&#34;toc&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#indice&#34;&gt;Índice&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#configuracion&#34;&gt;Configuración&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#diferencias-entre-lenguajes-y-extensiones&#34;&gt;Diferencias entre lenguajes y&amp;nbsp;extensiones&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#funciones&#34;&gt;Funciones&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#plugins&#34;&gt;Plugins&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#nerdtree&#34;&gt;NERDTree&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#ctr-p&#34;&gt;Ctr-p&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#tagbar&#34;&gt;Tagbar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#gundo&#34;&gt;Gundo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#workflow&#34;&gt;Workflow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;configuracion&#34;&gt;Configuración&lt;/h2&gt;
-&lt;p&gt;Aquí va una lista de mis &lt;em&gt;vimeros&lt;/em&gt; de referencia. A mí al menos me sirve
-bastante stalkear un poco a esta gente y ver cómo hacen las cosas con Vim.
-Aparte, algunos como &lt;a href=&#34;http://www.youtube.com/watch?v=xZuy4gBghho&#34;&gt;Steve Losh&lt;/a&gt;
-tienen videos hablando sobre su configuración de vimrc en&amp;nbsp;Youtube.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://github.com/sjl&#34;&gt;Steve&amp;nbsp;Losh&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://github.com/tpope&#34;&gt;Tim&amp;nbsp;Pope&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://github.com/scrooloose&#34;&gt;Martin Grenfel –&lt;span class=&#34;caps&#34;&gt;A.K.&lt;/span&gt;A&amp;nbsp;Scrooloose–&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://github.com/shawncplus&#34;&gt;Shawn&amp;nbsp;Biddle&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://github.com/wycats&#34;&gt;Yehuda&amp;nbsp;Katz&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;También dejo &lt;a href=&#34;http://github.com/jlgarhdez/vim&#34;&gt;mis dotfiles&lt;/a&gt; para que podáis
-verlas y consultar lo que queráis. Las tengo guardadas en un repositorio Git y
-los plugins están configurados por módulos de Git, de tal manera que, en caso de
-que se requiera actualizar cualquiera de ellos, puedo hacerlo con un&amp;nbsp;simple:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git submodule update nombreDelModulo
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;diferencias-entre-lenguajes-y-extensiones&#34;&gt;Diferencias entre lenguajes y&amp;nbsp;extensiones&lt;/h3&gt;
-&lt;p&gt;Aunque sé de gente que utiliza distintos archivos de configuración dependiendo
-del lenguaje que esté utilizando, no es la manera que tengo yo de trabajar.
-Como yo lo hago es con un solo archivo &lt;code&gt;.vimrc&lt;/code&gt; que contiene ciertos autocommands
-que se ejecutan dependiendo del filetype, por&amp;nbsp;ejemplo:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;augroup ft_php&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;nb&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;P&lt;/span&gt; :&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;open http:&lt;span class=&#34;sr&#34;&gt;//&lt;/span&gt;www.php.net/&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;cword&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;k&#34;&gt;setlocal&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;foldmethod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;syntax&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;k&#34;&gt;setlocal&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;expandtab&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;k&#34;&gt;setlocal&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;tabstop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;4&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;k&#34;&gt;setlocal&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;keywordprg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;pman&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;au&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;FileType&lt;/span&gt; php &lt;span class=&#34;nb&#34;&gt;inoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;paste&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;caps&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;:exe PhpDoc&lt;span class=&#34;p&#34;&gt;()&amp;lt;&lt;/span&gt;&lt;span class=&#34;caps&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;:&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;nopaste&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;caps&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;i&lt;/span&gt;&lt;br /&gt;augroup &lt;span class=&#34;caps&#34;&gt;END&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-¿Qué hace este grupo de autocommands? pues lo primero, indica que los fold sean
-por sintáxis, no por indentación ni por un marcador. En las siguientes dos
-líneas, obligamos a que se cambien las tabulaciones por cuatro espacios
-(Estándar de Symfony). En la penúltima, hacemos que cuando se quiera consultar
-una keyword de php se use pman, una utilidad para consultar el manual de php
-desde la línea de comandos. Por último, incluyo el atajo de teclado &lt;C-o&gt; para
-que se inserte el&amp;nbsp;PHPdoc.&lt;/p&gt;
-&lt;h3 id=&#34;funciones&#34;&gt;Funciones&lt;/h3&gt;
-&lt;p&gt;En mi archivo de configuración tengo varias funciones. Las dejo en el archivo de
-configuración mientras son los suficientemente pequeñas como para no molestar.
-Ha habido otras veces que he creado plugins a partir de funciones, porque, por
-su naturaleza, no debían estar en el&amp;nbsp;.vimrc.&lt;/p&gt;
-&lt;p&gt;Estas funciones son relativamente interesantes, sobre todo si programais &lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;. La
-primera de ellas, la creé a partir de un video que del gran
-&lt;a href=&#34;http://twitter.com/moisesgallego&#34;&gt;@moisesgallego&lt;/a&gt; hablando sobre Emacs. En el
-video, muestra un poco qué es Emacs Lisp creando una función realmente útil para
-&lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;. La función lo que hace es pedirte el nombre de una variable y escribir un
-var_dump() de la variable dentro de dos etiquetas &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; y mostrando también
-el archivo en que se encuentra el &lt;code&gt;var_dump()&lt;/code&gt;, para que no se nos olviden trazas.
-Aquí tenéis mi implementación de &lt;code&gt;Jeanclaude var_dump()&lt;/code&gt; en&amp;nbsp;Vimscript:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; JeanClaude&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;echo &amp;#39;var_dump() en &amp;quot;&lt;/span&gt; . @% . &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;#39;;&amp;quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; openpre &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;echo &amp;#39;&amp;lt;pre&amp;gt;&amp;#39;;&amp;quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; closepre &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;echo &amp;#39;&amp;lt;/pre&amp;gt;&amp;#39;;&amp;quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; nombre &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; inputdialog&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;nombre de la variable: &amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    exec &lt;span class=&#34;s2&#34;&gt;&amp;quot;normal! O&amp;quot;&lt;/span&gt; . &lt;span class=&#34;nb&#34;&gt;path&lt;/span&gt;  . &lt;span class=&#34;s2&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt; . openpre . &lt;span class=&#34;s2&#34;&gt;&amp;quot;\nvar_dump($&amp;quot;&lt;/span&gt; . nombre . &lt;span class=&#34;s2&#34;&gt;&amp;quot;);\n&amp;quot;&lt;/span&gt; . closepre&lt;br /&gt;&lt;span class=&#34;k&#34;&gt;endfunction&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;command&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;bar&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;narg&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; Jeanclaude &lt;span class=&#34;k&#34;&gt;call&lt;/span&gt; JeanClaude&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-Al final, después de la función, creo el comando &lt;code&gt;:Jeanclaude&lt;/code&gt; para ejecutar la
-función de manera más cómoda que &lt;code&gt;:call JeanClaude()&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Otra de las funciones que tengo en mi vimrc es un asistente para crear getters
-y setters de un atributo de clase cuando tienes el cursor en esa linea. Aviso:
-no es el código más bonito que he escrito en mi vida, no es &lt;span class=&#34;caps&#34;&gt;PSR&lt;/span&gt; compliant,
-y mil cosas más&amp;#8230; pero&amp;nbsp;funciona.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;s&lt;/span&gt;:CreateGetterSetter&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; line &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; getline&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; getterStart &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;()\n{\nreturn $this-&amp;gt;&amp;quot;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; setterStart &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;($nombre)\n{\nthis-&amp;gt;&amp;quot;&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; nombreDelMetodo &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;substitute&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;line&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;[\t*]public \\$&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;[\t*]protected &amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;[\t*]private &amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;\\$&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;[=.*]&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; nombreDelMetodo &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; split&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;nombreDelMetodo&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;[&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;]&lt;br /&gt;&amp;nbsp;&lt;br /&gt;    exec &lt;span class=&#34;s2&#34;&gt;&amp;quot;normal! opublic function get_&amp;quot;&lt;/span&gt; . nombreDelMetodo . getterStart . nombreDelMetodo . &lt;span class=&#34;s2&#34;&gt;&amp;quot;;\n}\n&amp;quot;&lt;/span&gt;&lt;br /&gt;    exec &lt;span class=&#34;s2&#34;&gt;&amp;quot;normal! opublic function set_&amp;quot;&lt;/span&gt; . nombreDelMetodo . setterStart . nombreDelMetodo  . &lt;span class=&#34;s2&#34;&gt;&amp;quot; = $nombre;\n}\n&amp;quot;&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;&lt;span class=&#34;k&#34;&gt;endfunction&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;command&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; Gs &lt;span class=&#34;k&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;s&lt;/span&gt;:CreateGetterSetter&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;&lt;span class=&#34;nb&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;gs&lt;/span&gt; :Gs&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-Por último, para ilustrar un poco más las funciones que utilizo, os enseño una
-que acabo de crear para cambiar de colorscheme&amp;nbsp;rápidamente:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; ToggleColorscheme&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;g&lt;/span&gt;:colors_name &lt;span class=&#34;p&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;solarized&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;br /&gt;        &lt;span class=&#34;k&#34;&gt;colorscheme&lt;/span&gt; Molokai&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;br /&gt;        &lt;span class=&#34;k&#34;&gt;colorscheme&lt;/span&gt; solarized&lt;br /&gt;        &lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;background&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;light&lt;/span&gt;&lt;br /&gt;    &lt;span class=&#34;k&#34;&gt;endif&lt;/span&gt;&lt;br /&gt;&lt;span class=&#34;k&#34;&gt;endfunction&lt;/span&gt;&lt;br /&gt;&lt;span class=&#34;nb&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;f7&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;k&#34;&gt;call&lt;/span&gt; ToggleColorscheme&lt;span class=&#34;p&#34;&gt;()&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-Lo que hace esta última función es comprobar el colorscheme que estamos usando,
-y dependiendo de cuál sea, aplica uno u otro. Yo actualmente utilizo sólo dos:
-Molokai (el &lt;a href=&#34;https://bitbucket.org/sjl/dotfiles/src/63c73a196ade1b128464dad2a0595c6ecc884c21/vim/colors/molokai.vim?at=default&#34;&gt;fork&lt;/a&gt;
-de Steve Losh) y Solarized (de Ethan&amp;nbsp;Schoonover).&lt;/p&gt;
-&lt;h2 id=&#34;plugins&#34;&gt;Plugins&lt;/h2&gt;
-&lt;p&gt;El editor Vim es excelente, no por Vim en sí –que también– sino por la gran
-comunidad de desarrolladores de plugins que hay. Es fascinante que aunque una
-funcionalidad no esté listada en
-&lt;a href=&#34;http://www.vim.org/scripts/index.php&#34;&gt;Vim Scripts&lt;/a&gt; siempre puedes encontrar algo
-parecido a lo que buscas buceando en los dotfiles de algún programador que&amp;nbsp;conozcas.&lt;/p&gt;
-&lt;p&gt;Algunos de los plugins que más utilizo son los&amp;nbsp;siguientes:&lt;/p&gt;
-&lt;h3 id=&#34;nerdtree&#34;&gt;&lt;a href=&#34;https://github.com/scrooloose/nerdtree&#34;&gt;NERDTree&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Un gran plugin para manejo del sistema de archivos desde Vim. Permite mostrar
-un árbol de directorios desde el el punto del sistema de archivos en que nos
-encontremos en Vim &lt;code&gt;:pwd&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Yo lo tengo mapeado para que alterne entre mostrar y ocultar con &lt;F2&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;map &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;F2&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :NERDTreeToggle&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;caps&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-Aparte de para mostrar el árbol de directorios, es muy útil para crear, borrar,
-copiar y mover archivos. Esto lo podemos hacer pulsando &lt;code&gt;m&lt;/code&gt; en modo normal
-encima del archivo que queramos, lo cual mostrará un menú con las opciones de
-copiar, mover, crear, borrar, mostrar en&amp;nbsp;Finder&amp;#8230;&lt;/p&gt;
-&lt;h3 id=&#34;ctr-p&#34;&gt;&lt;a href=&#34;https://github.com/kien/ctrlp.vim&#34;&gt;Ctr-p&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Es un plugin que aporta la funcionalidad de fuzzy file search, como la que tiene
-Textmate. Surgió como alternativa a Command-t, que está escrito en Ruby, por
-lo que necesita que Vim esté compilado con soporte para Ruby, sin embargo ctrl-p
-está escrito entero en&amp;nbsp;Vimscript.&lt;/p&gt;
-&lt;p&gt;Es bastante sencillo de usar. Para sacar el menú, simplemente pulsamos &lt;code&gt;&amp;lt;C-p&amp;gt;&lt;/code&gt;,
-después simplemente empezamos a escribir y nos muestra archivos dentro del &lt;span class=&#34;caps&#34;&gt;CWD&lt;/span&gt;
-que contienen las letras que vamos escribiendo. Simplemente decir que hace falta
-refrescarlo cada vez que creamos/borramos/movemos archivos. Ésto lo hacemos con
-&lt;code&gt;&amp;lt;F5&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;tagbar&#34;&gt;&lt;a href=&#34;https://github.com/majutsushi/tagbar&#34;&gt;Tagbar&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Un plugin bastante útil para programar. Muestra un sidebar a la derecha de la
-pantalla en la que aparecen los elementos generados por ctags para el archivo
-actual. Ésta sidebar es navegable, por lo que podemos seleccionar cualquiera de
-los elementos que nos muestra y darle a enter y nos lleva a el en el buffer. Muy&amp;nbsp;cómodo.&lt;/p&gt;
-&lt;h3 id=&#34;gundo&#34;&gt;&lt;a href=&#34;https://github.com/sjl/gundo.vim&#34;&gt;Gundo&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Plugin muy útil que nos muestra el historial de undo en un sidebar. También es
-navegable, por lo que podemos seleccionar un estado de los que aparecen y al
-darle a enter, volverá el fichero al estado en que se encontraba en ese momento.
-Super bueno para encontrar y resolver&amp;nbsp;bugs.&lt;/p&gt;
-&lt;h2 id=&#34;workflow&#34;&gt;Workflow&lt;/h2&gt;
-&lt;p&gt;Últimamente utilizo Git para el control de versiones. Para controlarlo utilizo
-la línea de comandos. He probado Fugitive, el plugin de Git para Vim, creado por
-&lt;a href=&#34;http://tpo.pe&#34;&gt;Tim Pope&lt;/a&gt;, y me parece muy cómodo, pero no me llego a
-acostumbrar. El emulador de terminal que uso es iTerm2. Es bastante potente
-y tiene muy buena integración con&amp;nbsp;Tmux.&lt;/p&gt;
-&lt;p&gt;Como navegador, para trabajar uso Firefox, por Pentadactyl. Lo malo es que la
-última version de Firefox con la que funciona Pentadactyl es &lt;span class=&#34;caps&#34;&gt;FF14&lt;/span&gt;, es decir,
-hace 7 versiones. Estoy considerando pasarme otra vez a&amp;nbsp;Chrome.&lt;/p&gt;            </content>
+                                            </content>
         </entry>
             <entry>
             <title type="html">Hola Hyde!</title>
@@ -175,22 +31,7 @@ hace 7 versiones. Estoy considerando pasarme otra vez a&amp;nbsp;Chrome.&lt;/p&g
             <id>/blog/2013/04/hola-hyde.html</id>
             
             <content type="html">
-                                &lt;p&gt;Bueno, pues me cambio a &lt;a href=&#34;http://ringce.com/hyde&#34;&gt;Hyde&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;No es por nada, sólamente que me apetecía&amp;nbsp;probarlo.&lt;/p&gt;
-&lt;p&gt;Hyde es lo que llaman un &lt;em&gt;static site generator&lt;/em&gt;, esto es un software que se
-encarga de generar archivos &lt;span class=&#34;caps&#34;&gt;HTML&lt;/span&gt; a partir de archivos
-&lt;a href=&#34;http://daringfireball.net/projects/markdown&#34;&gt;Markdown&lt;/a&gt;, Jinja2, &lt;span class=&#34;caps&#34;&gt;RST&lt;/span&gt;,&amp;nbsp;Tex&amp;#8230;&lt;/p&gt;
-&lt;p&gt;Con ésto lo que consigo básicamente es poder gestionar toda la página desde Git,
-sin tener que preocuparme de bases de datos, backups etc. Tengo siempre mi
-backup en Github y me&amp;nbsp;olvido.&lt;/p&gt;
-&lt;p&gt;Esto de pasarse a sitios estáticos se puso de moda entre los blogueros más pro
-para poder soportar lo que denominan &lt;em&gt;efecto Reddit/Slashdot/&lt;span class=&#34;caps&#34;&gt;HN&lt;/span&gt;&lt;/em&gt;, es decir, que alguien
-ponga un enlace a un artículo de tu blog en una de estas plataformas y recibir
-tráfico masivo en cuestion de minutos. Imaginad lo que puede ser para un
-servidor chungo (Yo por ejemplo estoy pagando 15$ al mes por un &lt;span class=&#34;caps&#34;&gt;VPS&lt;/span&gt;.) que un
-artículo tuyo se haga portada en Hacker News o en Reddit&amp;#8230;&amp;nbsp;Locura.&lt;/p&gt;
-&lt;p&gt;Aparte, con el cambio de framework, viene tambien un rediseño. Bueno, un diseño,
-ya que en el anterior ni había parado a hacerlo, era un Bootstrap&amp;nbsp;básico.&lt;/p&gt;            </content>
+                                            </content>
         </entry>
             <entry>
             <title type="html">Cómo no usar el ratón</title>
@@ -201,73 +42,7 @@ ya que en el anterior ni había parado a hacerlo, era un Bootstrap&amp;nbsp;bás
             <id>/blog/2013/04/como-no-usar-el-raton.html</id>
             
             <content type="html">
-                                &lt;p&gt;Me he vuelto un poco talibán con el tema de la productividad y el no sacar 
-las manos del&amp;nbsp;teclado.&lt;/p&gt;
-
-&lt;h2&gt;Herramientas&lt;/h2&gt;
-
-&lt;p&gt;&lt;p&gt; 
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;http://www.alfredapp.com&#34;&gt;Alfred&lt;/a&gt;&lt;/li&gt; 
-        &lt;li&gt;&lt;a href=&#34;http://www.mozilla.org&#34;&gt;Firefox&lt;/a&gt;&lt;/li&gt; 
-        &lt;li&gt;&lt;a href=&#34;http://5digits.org/pentadactyl/&#34;&gt;Pentadactyl&lt;/a&gt;&lt;/li&gt; 
-        &lt;li&gt;&lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt;&lt;/li&gt; 
-    &lt;/ul&gt; 
-&lt;/p&gt;&lt;/p&gt;
-&lt;h2&gt;¿Cómo?&lt;/h2&gt;
-
-&lt;p&gt;Bien, el tema es que si no tienes que mover las manos hasta el ratón a cada
-rato, se gana bastante tiempo. ¿Y qué más me da eso? Pues que así tienes más
-tiempo para procrastinar, 4chan se nutre de&amp;nbsp;nosotros&amp;#8230;&lt;/p&gt;
-
-&lt;p&gt;Básicamente mi workflow es: &lt;ul&gt;
-
-    &lt;li&gt;Todo el texto que tengo que escribir lo escribo en Vim. Incluso
-    responder emails, escribir éste post&amp;#8230; todo. Es más rápido escribirlo en
-    Vim, copiar y pegar que desaprender todos mis tricks para escribir como el
-    resto de los&amp;nbsp;mortales.&lt;/li&gt;
-
-    &lt;li&gt;Como navegador utilizo Firefox. No por el navegador en sí, de hecho me
-    parece que Chrome es mejor, pero Chrome no tiene Pentadactyl&amp;#8230; Tiene algo
-    parecido llamado Vimium, pero no es lo mismo ni de&amp;nbsp;cerca.&lt;/li&gt;
-
-    &lt;li&gt;Pentadactyl para manejar Firefox. ¿Cómo he podido vivir sin tí? es un 
-    addon para Firefox que permite manejar el navegador con controles parecidos 
-    a Vim. Aparte, tiene unos cuantos plugins interesantes como el de firebug, 
-    para manejar Firebug o el de jQuery, escrito por el mismo John Resig&amp;#8230; 
-    Además con Pentadactyl tiene opcion de editar cualquier textarea en el 
-    editor que elijas&amp;nbsp;(&lt;span class=&#34;caps&#34;&gt;VIM&lt;/span&gt;!)&lt;/li&gt;
-
-    &lt;li&gt;Para abrir aplicaciones nuevas y cambiar entre las que tengo abiertas,
-    uso Alfred. Es un lanzador de aplicaciones que se activa con un hotkey
-    y que, aparte de lanzar aplicaciones, también permite crearte tus propias 
-    busquedas. Yo tengo por ejemplo un atajo para buscar en la &lt;span class=&#34;caps&#34;&gt;API&lt;/span&gt; de&amp;nbsp;&lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;.&lt;/li&gt;
-
-&lt;/ul&gt;
-
-&lt;h2&gt;¿Por qué&amp;nbsp;Alfred?&lt;/h2&gt;
-
-&lt;p&gt;Bueno, sé que hay otros lanzadores de aplicaciones en el mercado, por ejemplo
-Quicksilver. Si he de ser sincero, no lo he probado, me lo apunto ya que me lo
-preguntas&amp;#8230;&amp;nbsp;:)&lt;/p&gt;
-
-&lt;h2&gt;¿Por qué&amp;nbsp;Vim?&lt;/h2&gt;
-
-&lt;p&gt;Bitch,&amp;nbsp;please&amp;#8230;&lt;/p&gt;
-
-&lt;h2&gt;¿Por qué&amp;nbsp;Firefox?&lt;/h2&gt;
-
-&lt;p&gt;Por&amp;nbsp;Pentadactyl.&lt;/p&gt;
-
-&lt;h2&gt;¿Por qué&amp;nbsp;Pentadactyl?&lt;/h2&gt;
-
-&lt;p&gt;Bueno, se es más rápido. Únicamente tienes que mover tus manos entre las
-teclas, lo que ahorra mucho tiempo. Te puedes crear macros para hacer acciones&amp;nbsp;concretas.&lt;/p&gt;
-
-&lt;p&gt;De todos  modos tengo que decir que no todo el tiempo estoy solamente con el 
-teclado. Hay algunos momentos, cuando estoy leyendo un post largo por ejemplo, o
-estoy en alguna página que necesita de más interaccion que hacer click en
-enlaces, que uso el&amp;nbsp;ratón&lt;/p&gt;            </content>
+                                            </content>
         </entry>
             <entry>
             <title type="html">Nginx, Django y Green Unicorn, magia negra</title>
@@ -278,79 +53,7 @@ enlaces, que uso el&amp;nbsp;ratón&lt;/p&gt;            </content>
             <id>/blog/2013/02/nginx-django-gunicorn.html</id>
             
             <content type="html">
-                                &lt;p&gt;Para estrenar el blog, vamos con un buen ladrillo. Vamos a hablar sobre cómo 
-está montada ésta&amp;nbsp;web.&lt;/p&gt;
-
-&lt;h3&gt;Intro&lt;/h3&gt;
-
-&lt;p&gt;Ésta web la he creado principalmente, para aprender. En ella uso Django, Ngnix,
-    Gunicorn&amp;#8230; Os lo muestro con una imagen para que quede más&amp;nbsp;claro. &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/-0UP-0ib7FOs/UK1IVdhOd_I/AAAAAAAAASk/F9Xt-OPjznE/s512/jlgarcia.me.jpg&#34;&gt;&lt;/p&gt;
-
-&lt;h3&gt;Nginx&lt;/h3&gt;
-
-&lt;p&gt;En este caso, Nginx lo estoy usando como proxy sólamente. Uso Nginx en vez de 
-Apache, Lighttp o FastCGI porque&amp;#8230; bueno&amp;#8230; es lo más jodido trendy, todo el 
-mundo quiere a Nginx. No, ahora en serio, lo uso porque Apache lo he usado en 
-ocasiones anteriores, y lo que necesito es un proxy que redirija el tráfico que 
-vaya hacia &lt;a href=&#34;jlgarcia.me/blog&#34;&gt;jlgarcia.me/blog&lt;/a&gt;  a un puerto en el que 
-corre Green&amp;nbsp;Unicorn.&lt;/p&gt;
-
-&lt;p&gt;
-La configuración que uso en Nginx es la siguiente:
-&lt;pre&gt;server {
-     server_name jlgarcia.me;
-     access_log /var/log/nginx/nginx_access.log;
-     location / {
-          alias /var/www/;
-     }
-     location /blog {
-          proxy_pass    http://127.0.0.1:1337/blog;
-     }
-     location /static {
-          alias /var/www/static/;
-     }
-}
-&lt;/pre&gt;
-&lt;/p&gt;&lt;p&gt;
-Lo que hacemos en esta configuración es:
-&lt;ul&gt;
-     &lt;li&gt;Servir el dominio&amp;nbsp;jlgarcia.me&lt;/li&gt;
-     &lt;li&gt;Enviar las peticiones a &lt;a href=&#34;http://jlgarcia.me&#34;&gt;jlgarcia.me&lt;/a&gt; a 
-     la carpeta raíz de mi&amp;nbsp;servidor&lt;/li&gt;
-     &lt;li&gt;Pasar las peticiones al &lt;a href=&#34;http://jlgarcia.me/blog&#34;&gt;jlgarcia.me/blog&lt;/a&gt; 
-     al servidor que está corriendo en el puerto 1337 en nuestra máquina mediante 
-     Green&amp;nbsp;Unicorn&lt;/li&gt;
-     &lt;li&gt;Servir el contenido estático (&lt;span class=&#34;caps&#34;&gt;CSS&lt;/span&gt;, Javascript, imágenes&amp;#8230;) de nuestra 
-     carpeta&amp;nbsp;Static&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;
-&lt;h3&gt;Sobre Green&amp;nbsp;Unicorn&lt;/h3&gt; 
-&lt;p&gt;
- Con Gunicorn, lo que hacemos es servir en sí el contenido de Django. Es bastante 
- fácil de usar y configuración requiere cero. Lo que he hecesitado para que 
- funcione es instalarlo:
- &lt;pre&gt;sudo pip install gunicorn&lt;/pre&gt;
- Después añadirlo a las installed apps de Django en la configuración y, por 
- último, parra arrancar el servidor uso la siguiente instrucción:
- &lt;pre&gt;./manage.py run_gunicorn -b 127.0.0.1:1337 --daemon&lt;/pre&gt;
- Ésto lo que hace es correr el servidor en modo &amp;#8220;daemon&amp;#8221; en el puerto 1337. Rly&amp;nbsp;Ez!
-
-&lt;/p&gt;
-
-&lt;h3&gt;Bootstrap&lt;/h3&gt;
-
-&lt;p&gt;
-Aceptémoslo, el frontend para un retrasado visual —como yo— es bastante jodido. 
-Lo que quería para ésta web era un diseño que no necesitara imágenes principalmente 
-—de hecho no tengo ninguna hecha por mí en todo el diseño— Además tenemos el que 
-es completamente responsive, que es un estándar y que es bastante&amp;nbsp;bonito. 
-&lt;/p&gt;
-
-&lt;p&gt;
-Espero haber dado suficiente coñazo&amp;#8230; Nos&amp;nbsp;vemos!
-&lt;/p&gt;            </content>
+                                            </content>
         </entry>
             <entry>
             <title type="html">Volviendo a Vim. No soy el primero que dice esto...</title>
@@ -361,71 +64,6 @@ Espero haber dado suficiente coñazo&amp;#8230; Nos&amp;nbsp;vemos!
             <id>/blog/2013/02/volviendo-a-vim.html</id>
             
             <content type="html">
-                                &lt;p&gt;En este post quiero hablaros de Vim, de por qué dejé de usarlo y de por qué
-vuelvo ahora a él. Bueno, antes de nada os dejo el enlace a mi 
-&lt;a href=&#34;https://github.com/jlgarhdez/vim&#34;&gt;carpeta de configuración de Vim&lt;/a&gt;&amp;nbsp;.&lt;/p&gt;
-
-&lt;h3&gt;Por qué lo&amp;nbsp;dejé&lt;/h3&gt;
-
-&lt;p&gt;Pues ahora mismo no recuerdo bien. Creo que lo dejé porque descubrí 
-&lt;a href=&#34;http://www.jetbrains.com/phpstorm/&#34;&gt;Phpstorm&lt;/a&gt;. Bueno, yo desarrollo en &lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;, y 
-editores buenos para php hay pocos. Es un &lt;span class=&#34;caps&#34;&gt;IDE&lt;/span&gt; bastante potente hecho por los amigos 
-de Jetbrains. Probablemente conozcáis IntelliJ &lt;span class=&#34;caps&#34;&gt;IDEA&lt;/span&gt;, para Java. Lo de los &lt;span class=&#34;caps&#34;&gt;IDE&lt;/span&gt;´s al 
-principio me flipó bastante -Los descubrí, yo creo con Eclipse para Java-. Luego,
-cuando empiezan a comer memoria como Zombies hambrientos, ya harta más. Por ésto 
-me pasé a PhpStorm, es potente, rápido -comparado con Eclipse- , el autocompletado
-no está&amp;nbsp;mal&amp;#8230;&lt;/p&gt;
-
-&lt;p&gt;Tiene muchas cosas buenas PhpStorm&amp;#8230; Pero también muchas malas. Es pesado, lento
-&amp;#8212; contra Vim/ Sublime/ Textmate&amp;#8230;&amp;#8212;, de pago, y sobre todo, poco&amp;nbsp;configurable.&lt;/p&gt;
-
-&lt;p&gt;Después de PhpStorm estuve un tiempo con Sublime Text 2. Aparte de los cursores
-múltiples que, aceptémoslo, es una killer feature, no tiene nada para mí. Cosa[s]
-buena[s] de Sublime Text para mí, los cursores múltiples. Lo &amp;#8220;malo&amp;#8221; es que es 
-suficientemente buena como para cambiarse. Agiliza muchísimo el tratamiento de 
-textos grandes. Pero para programar en sí, no aporta&amp;nbsp;nada.&lt;/p&gt;
-
-&lt;p&gt;Cosas malas que veo de Sublime: para ser un editor &amp;#8220;ligero&amp;#8221; es &lt;strong&gt;pesado&lt;/strong&gt;. En una
-ocasión se me ocurrió abrir un backup de 100M para hacer unas modificaciones y 
-me tocó tirar de &lt;em&gt;forceclose&lt;/em&gt;. Y, sobre todo, no es software&amp;nbsp;libre.&lt;/p&gt;
-
-&lt;h3&gt;Por qué&amp;nbsp;vuelvo&lt;/h3&gt;
-
-&lt;p&gt;Vuelvo a Vim por muchas razones, pero en el top&amp;nbsp;están:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;El poder mantener mi configuración entre máquinas.&lt;/strong&gt;
-Bueno, ésto no es un problema para un editor no configurable, pero para otro que
-sí lo sea, lo&amp;nbsp;es.&lt;/p&gt;
-
-&lt;p&gt;Como toda la configuración va sobre archivos de texto, es totalmente versionable.
-Yo tengo mi carpeta de configuración en Github. Por lo que si quiero tener mi Vim
-en cualquier otra máquina, sólamente necesito tres&amp;nbsp;comandos:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd ~/
-git clone https://github.com/jlgarhdez/vim.git .vim
-ln -s .vim/vimrc .vimrc
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Se puede customizar hasta la médula.&lt;/strong&gt;
-Todo lo que se te ocurra existe en vim. De hecho, todo lo que existe en Unix, existe
-en&amp;nbsp;Vim.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Te vuelve RÁ&lt;span class=&#34;caps&#34;&gt;PIDO&lt;/span&gt;.&lt;/strong&gt;
-Todos los gurús de Vim dicen lo mismo para cuando empiezas. Que desmapees las
-flechas del teclado y uses hjkl para&amp;nbsp;moverte.&lt;/p&gt;
-&lt;p&gt;Al principio cuando usaba Vim usaba las teclas de dirección para moverme pero, 
-aunque parezca que no, ralentizan. Una vez sabes cómo, eres más rápido con las 
-teclas especiales de Vim que con las teclas de&amp;nbsp;dirección.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integración total con &lt;span class=&#34;caps&#34;&gt;UNIX&lt;/span&gt;.&lt;/strong&gt;
-Cualquier herramienta de &lt;span class=&#34;caps&#34;&gt;CLI&lt;/span&gt; que tengas instalada en el equipo es acesible desde
-Vim con&amp;nbsp;:!nombreDelBinario.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;Conclusión&lt;/h3&gt;
-
-&lt;p&gt;Os aconsejaría a todos a probar Vim, aunque sea sólo como editor &amp;#8220;ligero&amp;#8221;, ese que
-usamos para editar los &lt;span class=&#34;caps&#34;&gt;TXT&lt;/span&gt; o el&amp;nbsp;/etc/hosts.&lt;/p&gt;            </content>
+                                            </content>
         </entry>
     </feed>

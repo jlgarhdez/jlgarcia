@@ -104,6 +104,7 @@ alt="Fork me on GitHub"></a></p>
 <li><a href="#disclaimer">Disclaimer</a></li>
 <li><a href="#description">Description</a></li>
 <li><a href="#configuration">Configuration</a></li>
+<li><a href="#installation">Installation</a></li>
 <li><a href="#license">License</a></li>
 </ul>
 </div>
@@ -118,9 +119,8 @@ the uploader splits them into chunks and starts&nbsp;uploading.</p>
 <p>You can configure it from&nbsp;index.html.</p>
 <div class="highlight"><pre><span class="c1">// Initialize Upload object</span><br /><span class="nb">window</span><span class="p">.</span><span class="nx">upload</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Upload</span><span class="p">({</span><br />    <span class="nx">uploadScript</span><span class="o">:</span> <span class="s1">&#39;serverScript.php&#39;</span><span class="p">,</span><br />    <span class="nx">uploadFolder</span><span class="o">:</span> <span class="s1">&#39;uploads/&#39;</span><span class="p">,</span><br />    <span class="nx">tempFolder</span><span class="o">:</span> <span class="s1">&#39;tmp/&#39;</span><span class="p">,</span><br />    <span class="nx">chunkSize</span><span class="o">:</span> <span class="mi">200000</span><span class="p">,</span><br />    <span class="nx">maxUploadSize</span><span class="o">:</span> <span class="mi">2000000000</span><span class="p">,</span><br />    <span class="nx">files</span><span class="o">:</span> <span class="p">[]</span><br /><span class="p">});</span><br />&nbsp;<br /><span class="c1">// Initialize Drag and Drop object</span><br /><span class="nb">window</span><span class="p">.</span><span class="nx">dragAndDrop</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DragAndDrop</span><span class="p">({</span><br />    <span class="nx">droppableContainerId</span><span class="o">:</span> <span class="s1">&#39;droppable-container&#39;</span><span class="p">,</span><br />    <span class="nx">borderStyleOnDragover</span><span class="o">:</span> <span class="s1">&#39;6px dashed #444&#39;</span><span class="p">,</span><br />    <span class="nx">uploadButtonId</span><span class="o">:</span> <span class="s1">&#39;upload-button&#39;</span><span class="p">,</span><br />    <span class="nx">droppablePlaceholderId</span><span class="o">:</span> <span class="s1">&#39;droppable-placeholder&#39;</span><br /><span class="p">});</span><br />&nbsp;<br /><span class="kd">function</span> <span class="nx">fire</span><span class="p">()</span> <span class="p">{</span><br />    <span class="nx">upload</span><span class="p">.</span><span class="nx">uploadFile</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><br /><span class="p">}</span><br /></pre></div>
 
-<p><br />&nbsp;Install</p>
-<hr />
-<p>To&nbsp;install:</p>
+<p><br /></p>
+<h2 id="installation">Installation</h2>
 <pre><code># In the document root of the webserver
 git clone https://github.com/jlgarhdez/drop-n-load.git
 cd drop-n-load

@@ -23,7 +23,7 @@
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
   <title>
-						jlgarcia | Volviendo a Vim. No soy el primero que dice esto...
+						jlgarcia | Drop'n'load
 			  </title>
   <meta name="description" content="">
   <meta name="author" content="José Luis García">
@@ -54,7 +54,7 @@
 
 </script>
 </head>
-<body id="volviendo-a-vim">
+<body id="drop-n-load">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
@@ -87,96 +87,48 @@
           <section class="content">
           <article class="post">
 <h1 class="title">
-    <a href="/blog/2013/02/volviendo-a-vim.html">
-        Volviendo a Vim. No soy el primero que dice esto...
+    <a href="/projects/drop-n-load.html">
+        Drop'n'load
     </a>
 </h1>
-<time datetime="2013-02-01">
-    Posted: Fri, 01 Feb 2013
+<time datetime="2010-01-01">
+    Posted: Fri, 01 Jan 2010
 </time>
 
-<p>En este post quiero hablaros de Vim, de por qué dejé de usarlo y de por qué
-vuelvo ahora a él. Bueno, antes de nada os dejo el enlace a mi 
-<a href="https://github.com/jlgarhdez/vim">carpeta de configuración de Vim</a>&nbsp;.</p>
+<p><a href="https://github.com/jlgarhdez/drop-n-load"><img 
+style="position: absolute; top: 0; left: 0; border: 0;" 
+src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"
+alt="Fork me on GitHub"></a></p>
+<div class="toc">
+<ul>
+<li><a href="#disclaimer">Disclaimer</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</div>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>It needs a <span class="caps">HUGE</span> work on design, I don&#8217;t know how to design so please, don&#8217;t
+remember me it is ugly, i&nbsp;know.</p>
+<h2 id="description">Description</h2>
+<p>Drop n load is a chunked uploader with drag and drop&nbsp;capabilities.</p>
+<p>You can upload any number of files no matter its weight –tested up to <span class="caps">3GB</span>– and 
+the uploader splits them into chunks and starts&nbsp;uploading.</p>
+<h2 id="configuration">Configuration</h2>
+<p>You can configure it from&nbsp;index.html.</p>
+<div class="highlight"><pre><span class="c1">// Initialize Upload object</span><br /><span class="nb">window</span><span class="p">.</span><span class="nx">upload</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Upload</span><span class="p">({</span><br />    <span class="nx">uploadScript</span><span class="o">:</span> <span class="s1">&#39;serverScript.php&#39;</span><span class="p">,</span><br />    <span class="nx">uploadFolder</span><span class="o">:</span> <span class="s1">&#39;uploads/&#39;</span><span class="p">,</span><br />    <span class="nx">tempFolder</span><span class="o">:</span> <span class="s1">&#39;tmp/&#39;</span><span class="p">,</span><br />    <span class="nx">chunkSize</span><span class="o">:</span> <span class="mi">200000</span><span class="p">,</span><br />    <span class="nx">maxUploadSize</span><span class="o">:</span> <span class="mi">2000000000</span><span class="p">,</span><br />    <span class="nx">files</span><span class="o">:</span> <span class="p">[]</span><br /><span class="p">});</span><br />&nbsp;<br /><span class="c1">// Initialize Drag and Drop object</span><br /><span class="nb">window</span><span class="p">.</span><span class="nx">dragAndDrop</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DragAndDrop</span><span class="p">({</span><br />    <span class="nx">droppableContainerId</span><span class="o">:</span> <span class="s1">&#39;droppable-container&#39;</span><span class="p">,</span><br />    <span class="nx">borderStyleOnDragover</span><span class="o">:</span> <span class="s1">&#39;6px dashed #444&#39;</span><span class="p">,</span><br />    <span class="nx">uploadButtonId</span><span class="o">:</span> <span class="s1">&#39;upload-button&#39;</span><span class="p">,</span><br />    <span class="nx">droppablePlaceholderId</span><span class="o">:</span> <span class="s1">&#39;droppable-placeholder&#39;</span><br /><span class="p">});</span><br />&nbsp;<br /><span class="kd">function</span> <span class="nx">fire</span><span class="p">()</span> <span class="p">{</span><br />    <span class="nx">upload</span><span class="p">.</span><span class="nx">uploadFile</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><br /><span class="p">}</span><br /></pre></div>
 
-<h3>Por qué lo&nbsp;dejé</h3>
-
-<p>Pues ahora mismo no recuerdo bien. Creo que lo dejé porque descubrí 
-<a href="http://www.jetbrains.com/phpstorm/">Phpstorm</a>. Bueno, yo desarrollo en <span class="caps">PHP</span>, y 
-editores buenos para php hay pocos. Es un <span class="caps">IDE</span> bastante potente hecho por los amigos 
-de Jetbrains. Probablemente conozcáis IntelliJ <span class="caps">IDEA</span>, para Java. Lo de los <span class="caps">IDE</span>´s al 
-principio me flipó bastante -Los descubrí, yo creo con Eclipse para Java-. Luego,
-cuando empiezan a comer memoria como Zombies hambrientos, ya harta más. Por ésto 
-me pasé a PhpStorm, es potente, rápido -comparado con Eclipse- , el autocompletado
-no está&nbsp;mal&#8230;</p>
-
-<p>Tiene muchas cosas buenas PhpStorm&#8230; Pero también muchas malas. Es pesado, lento
-&#8212; contra Vim/ Sublime/ Textmate&#8230;&#8212;, de pago, y sobre todo, poco&nbsp;configurable.</p>
-
-<p>Después de PhpStorm estuve un tiempo con Sublime Text 2. Aparte de los cursores
-múltiples que, aceptémoslo, es una killer feature, no tiene nada para mí. Cosa[s]
-buena[s] de Sublime Text para mí, los cursores múltiples. Lo &#8220;malo&#8221; es que es 
-suficientemente buena como para cambiarse. Agiliza muchísimo el tratamiento de 
-textos grandes. Pero para programar en sí, no aporta&nbsp;nada.</p>
-
-<p>Cosas malas que veo de Sublime: para ser un editor &#8220;ligero&#8221; es <strong>pesado</strong>. En una
-ocasión se me ocurrió abrir un backup de 100M para hacer unas modificaciones y 
-me tocó tirar de <em>forceclose</em>. Y, sobre todo, no es software&nbsp;libre.</p>
-
-<h3>Por qué&nbsp;vuelvo</h3>
-
-<p>Vuelvo a Vim por muchas razones, pero en el top&nbsp;están:</p>
-
-<ol>
-<li>
-<p><strong>El poder mantener mi configuración entre máquinas.</strong>
-Bueno, ésto no es un problema para un editor no configurable, pero para otro que
-sí lo sea, lo&nbsp;es.</p>
-
-<p>Como toda la configuración va sobre archivos de texto, es totalmente versionable.
-Yo tengo mi carpeta de configuración en Github. Por lo que si quiero tener mi Vim
-en cualquier otra máquina, sólamente necesito tres&nbsp;comandos:</p>
-
-<pre><code>cd ~/
-git clone https://github.com/jlgarhdez/vim.git .vim
-ln -s .vim/vimrc .vimrc
+<p><br />&nbsp;Install</p>
+<hr />
+<p>To&nbsp;install:</p>
+<pre><code># In the document root of the webserver
+git clone https://github.com/jlgarhdez/drop-n-load.git
+cd drop-n-load
+coffee --compile --output js/ coffee/
 </code></pre>
-</li>
-<li><p><strong>Se puede customizar hasta la médula.</strong>
-Todo lo que se te ocurra existe en vim. De hecho, todo lo que existe en Unix, existe
-en&nbsp;Vim.</p></li>
-<li><p><strong>Te vuelve RÁ<span class="caps">PIDO</span>.</strong>
-Todos los gurús de Vim dicen lo mismo para cuando empiezas. Que desmapees las
-flechas del teclado y uses hjkl para&nbsp;moverte.</p>
-<p>Al principio cuando usaba Vim usaba las teclas de dirección para moverme pero, 
-aunque parezca que no, ralentizan. Una vez sabes cómo, eres más rápido con las 
-teclas especiales de Vim que con las teclas de&nbsp;dirección.</p>
-</li>
-<li><strong>Integración total con <span class="caps">UNIX</span>.</strong>
-Cualquier herramienta de <span class="caps">CLI</span> que tengas instalada en el equipo es acesible desde
-Vim con&nbsp;:!nombreDelBinario.</li>
-</ol>
+<h2 id="license">License</h2>
+<p><span class="caps">MIT</span> License, Copyright 2013 José Luis&nbsp;García</p></article>
 
-<h3>Conclusión</h3>
-
-<p>Os aconsejaría a todos a probar Vim, aunque sea sólo como editor &#8220;ligero&#8221;, ese que
-usamos para editar los <span class="caps">TXT</span> o el&nbsp;/etc/hosts.</p></article>
-
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-  var disqus_shortname = 'jlgarcia'; // required: replace example with your forum shortname
-
-  /* * * DON'T EDIT BELOW THIS LINE * * */
-  (function() {
-	  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
           </section>
 		  <footer>
 			  <hr/>

@@ -17,6 +17,11 @@ context:
                 type: page
                 url: blog
             -
+                name: Projects
+                description: projects
+                type: page
+                url: projects
+            -
                 name: Feed
                 description: Feed
                 css_class: feed
